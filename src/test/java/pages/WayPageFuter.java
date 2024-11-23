@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +38,7 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст адреса из футера.
      */
+    @Step("Get footer address")
     public String getFuterAdress() {
         wait.until(ExpectedConditions.visibilityOf(futerAdress));
         return futerAdress.getText();
@@ -47,6 +49,7 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст первого номера телефона из футера.
      */
+    @Step("Get first phone number from footer")
     public String getFuterPhoneNumber1() {
         wait.until(ExpectedConditions.visibilityOf(futerPhoneNumber1));
         return futerPhoneNumber1.getText();
@@ -57,6 +60,7 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст второго номера телефона из футера.
      */
+    @Step("Get second phone number from footer")
     public String getFuterPhoneNumber2() {
         wait.until(ExpectedConditions.visibilityOf(futerPhoneNumber2));
         return futerPhoneNumber2.getText();
@@ -67,6 +71,7 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст первого адреса электронной почты из футера.
      */
+    @Step("Get first email address from footer")
     public String getFuterMail1() {
         wait.until(ExpectedConditions.visibilityOf(futerMail1));
         return futerMail1.getText();
@@ -77,6 +82,7 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст второго адреса электронной почты из футера.
      */
+    @Step("Get second email address from footer")
     public String getFuterMail2() {
         wait.until(ExpectedConditions.visibilityOf(futerMail2));
         return futerMail2.getText();

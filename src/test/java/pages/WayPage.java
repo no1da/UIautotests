@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +13,7 @@ import java.time.Duration;
  * Класс WayPage представляет веб-страницу с элементами, которые можно найти и с которыми можно взаимодействовать.
  * Он использует Selenium WebDriver для управления браузером и выполнения операций с элементами на странице.
  */
+
 public class WayPage {
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -42,6 +44,7 @@ public class WayPage {
      *
      * @return true, если заголовок видимый; иначе false.
      */
+    @Step("Check visibility of the header")
     public boolean findHeader() {
         wait.until(ExpectedConditions.visibilityOf(header));
         return header.isDisplayed();
@@ -51,6 +54,7 @@ public class WayPage {
      *
      * @return true, если навигационный блок видимый; иначе false.
      */
+    @Step("Check visibility of the navigation block")
     public boolean findNavigationBlock() {
         wait.until(ExpectedConditions.visibilityOf(navigationBlock));
         return navigationBlock.isDisplayed();
@@ -60,6 +64,7 @@ public class WayPage {
      *
      * @return true, если кнопка регистрации видимая; иначе false.
      */
+    @Step("Check visibility of the registration button")
     public boolean findButtonRegistration() {
         wait.until(ExpectedConditions.visibilityOf(buttonRegistration));
         return buttonRegistration.isDisplayed();
@@ -69,6 +74,7 @@ public class WayPage {
      *
      * @return true, если список курсов видимый; иначе false.
      */
+    @Step("Check visibility of the courses list")
     public boolean findListCourses() {
         wait.until(ExpectedConditions.visibilityOf(listCourses));
         return listCourses.isDisplayed();
@@ -78,6 +84,7 @@ public class WayPage {
      *
      * @return true, если футер видимый; иначе false.
      */
+    @Step("Check visibility of the footer")
     public boolean findFooter() {
         wait.until(ExpectedConditions.visibilityOf(footer));
         return footer.isDisplayed();

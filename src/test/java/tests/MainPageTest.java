@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import utils.Config;
  * Этот класс предоставляет общие методики и настройки для тестов,
  * использующих Selenium WebDriver и страницу WayPage.
  */
+@Epic("Testing Way2Automation Page")
 public class MainPageTest {
     protected WayPage wayPage;
     protected WebDriver driver;

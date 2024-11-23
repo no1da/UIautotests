@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -33,6 +34,7 @@ public class WayPageNavigationBlock extends WayPage {
      * задерживает выполнение до его видимости,
      * затем перемещается к элементу "Пожизненный доступ" и кликает на него.
      */
+    @Step("Navigate to 'Lifetime Access' page")
     public void goToLifeTime() {
         wait.until(ExpectedConditions.visibilityOf(allCourses));
         Actions action = new Actions(driver);

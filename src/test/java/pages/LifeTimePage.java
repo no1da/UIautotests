@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+
 /**
  * Класс LifeTimePage представляет веб-страницу, связанную с отдельным разделом приложения.
  * Он используется для взаимодействия с элементами на странице жизни и управления проверкой их состояния.
@@ -34,6 +36,7 @@ public class LifeTimePage {
      *
      * @return текст заголовка страницы.
      */
+    @Step("Get the text from header")
     public String getTextHeader() {
         wait.until(ExpectedConditions.visibilityOf(header));
         return header.getText();

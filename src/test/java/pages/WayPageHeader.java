@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,6 +52,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст первого номера телефона.
      */
+    @Step("Get the first phone number from header")
     public String getPhoneNumber1() {
         wait.until(ExpectedConditions.visibilityOf(headerPhoneNumber1));
         return headerPhoneNumber1.getText();
@@ -61,6 +63,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст второго номера телефона.
      */
+    @Step("Get the second phone number from header")
     public String getPhoneNumber2() {
         wait.until(ExpectedConditions.visibilityOf(headerPhoneNumber2));
         return headerPhoneNumber2.getText();
@@ -71,6 +74,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст третьего номера телефона.
      */
+    @Step("Get the third phone number from header")
     public String getPhoneNumber3() {
         wait.until(ExpectedConditions.visibilityOf(headerPhoneNumber3));
         return headerPhoneNumber3.getText();
@@ -81,6 +85,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст ссылки на Skype.
      */
+    @Step("Get the Skype link text from header")
     public String getSkype() {
         wait.until(ExpectedConditions.visibilityOf(headerSkype));
         return headerSkype.getText();
@@ -91,6 +96,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст адреса электронной почты.
      */
+    @Step("Get the email address text from header")
     public String getMail() {
         wait.until(ExpectedConditions.visibilityOf(headerMail));
         return headerMail.getText();
@@ -101,6 +107,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на Facebook.
      */
+    @Step("Get the Facebook URL from header")
     public String getFaceBook() {
         wait.until(ExpectedConditions.visibilityOf(faceBook));
         return faceBook.getAttribute("href");
@@ -111,6 +118,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на LinkedIn.
      */
+    @Step("Get the LinkedIn URL from header")
     public String getLinkedIn() {
         wait.until(ExpectedConditions.visibilityOf(linkedIn));
         return linkedIn.getAttribute("href");
@@ -121,6 +129,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на Google.
      */
+    @Step("Get the Google URL from header")
     public String getGoogle() {
         wait.until(ExpectedConditions.visibilityOf(google));
         return google.getAttribute("href");
@@ -131,6 +140,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на YouTube.
      */
+    @Step("Get the YouTube URL from header")
     public String getYouTube() {
         wait.until(ExpectedConditions.visibilityOf(youTube));
         return youTube.getAttribute("href");

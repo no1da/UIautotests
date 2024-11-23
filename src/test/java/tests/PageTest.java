@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.*;
@@ -9,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Класс тестирования страницы (https://www.way2automation.com/) содержит тесты для проверки различных элементов
  * и функциональности веб-страницы, используя фреймворк JUnit.
  */
+@Epic("Testing Way2Automation Page")
 public class PageTest extends MainPageTest {
     private WayPageHeader wayPageHeader;
     private WayPageFuter wayPageFuter;
@@ -20,6 +22,9 @@ public class PageTest extends MainPageTest {
      * списка курсов и навигационного блока на веб-странице.
      */
     @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Header, Footer, Registration Button, Courses List")
+    @Story("Verify essential elements presence on the page")
     public void wayPageTest() {
         Assertions.assertTrue(wayPage.findHeader());
         Assertions.assertTrue(wayPage.findFooter());
@@ -33,6 +38,9 @@ public class PageTest extends MainPageTest {
      * ожидаемыми значениями из конфигурации.
      */
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Header Information")
+    @Story("Validate header information against expected values")
     public void wayPageHeaderTest() {
         wayPageHeader = new WayPageHeader(driver);
         Assertions.assertEquals(config.getProperty("phone.number1"), wayPageHeader.getPhoneNumber1());
@@ -49,6 +57,9 @@ public class PageTest extends MainPageTest {
      * Проверяет значения футера на странице и сравнивает их с
      * ожидаемыми значениями из конфигурационного файла.
      */
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Footer Information")
+    @Story("Validate footer information against expected values")
     @Test
     public void wayPageFutterTest() {
         wayPageFuter = new WayPageFuter(driver);
@@ -63,6 +74,9 @@ public class PageTest extends MainPageTest {
      * активного курса до и после прокрутки.
      */
     @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Course Navigation")
+    @Story("Test course navigation functionality")
     public void coursesTest() {
         wayPageCourses = new WayPageCourses(driver);
         String titleCurse = wayPageCourses.getTitleActiveCourse();
@@ -76,6 +90,9 @@ public class PageTest extends MainPageTest {
      * заголовок страницы с ожидаемым заголовком из конфигурации.
      */
     @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Lifetime Membership Navigation")
+    @Story("Test navigation to lifetime membership page")
     public void goToLifeTimeTest() {
         lifeTimePage = new LifeTimePage(driver);
         wayPageNavigationBlock = new WayPageNavigationBlock(driver);
