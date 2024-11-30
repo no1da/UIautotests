@@ -12,6 +12,9 @@ import java.util.concurrent.TimeUnit;
 public class AlertPageTest {
     private WebDriver driver;
     private AlertPage alertPage;
+
+    private static final String BASE_URL = "https://way2automation.com/way2auto_jquery/alert.php#load_box";
+    private static final String EXPECTED_MESSAGE = "Hello Snape! How are you today?";
     /**
      * Инициализация браузера перед каждым тестом.
      * Этот метод:
@@ -26,7 +29,7 @@ public class AlertPageTest {
         alertPage = new AlertPage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://way2automation.com/way2auto_jquery/alert.php#load_box");
+        driver.get(BASE_URL);
     }
     /**
      * Основной тест для проверки функциональности alert (prompt).
@@ -44,7 +47,7 @@ public class AlertPageTest {
         alertPage.switchToFrame();
         alertPage.clickButtonClick();
         alertPage.alertAccept();
-        Assertions.assertEquals("Hello Snape! How are you today?", alertPage.getMessageBoxText());
+        Assertions.assertEquals(EXPECTED_MESSAGE, alertPage.getMessageBoxText());
     }
     /**
      * Завершение работы в браузере после каждого теста.
