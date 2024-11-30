@@ -16,11 +16,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class HttpWatchTest {
     private HttpWatchPage httpWatchPage;
     private WebDriver driver;
-    private String baseUrl;
-    private String url;
     private String authUrl;
-    private String username;
-    private String password;
+
+    private static final String BASE_URL = "www.httpwatch.com/httpgallery/authentication/#showExample10";
+    private static final String URL = "http://www.httpwatch.com/httpgallery/authentication/#showExample10";
+    private static final String USERNAME = "httpwatch";
+    private static final String PASSWORD = "httpwatch";
+    private static final String AUTH_URL = "http://%s:%s@%s";
+
     /**
      * Метод setUp() выполняется перед каждым тестом.
      * На его этапе выполняется:
@@ -30,15 +33,11 @@ public class HttpWatchTest {
      */
     @BeforeEach
     public void setUp() {
-        baseUrl = "www.httpwatch.com/httpgallery/authentication/#showExample10";
-        url = "http://www.httpwatch.com/httpgallery/authentication/#showExample10";
-        username = "httpwatch";
-        password = "httpwatch";
-        authUrl = String.format("http://%s:%s@%s", username, password, baseUrl);
+        authUrl = String.format(AUTH_URL, USERNAME, PASSWORD, BASE_URL);
         driver = new ChromeDriver();
         httpWatchPage = new HttpWatchPage(driver);
         driver.manage().window().maximize();
-        driver.get(url);
+        driver.get(URL);
     }
     /**
      * Основной тест, проверяющий работу Basic Authentication и доступ к защищённым элементам страницы.
