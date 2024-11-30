@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,6 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FrameAndWindowsTest {
     private WebDriver driver;
     private FramesAndWindowsPages framesAndWindowsPages;
+    private TabsHelper tabsHelper;
+
+    private static final String BASE_URL = "https://way2automation.com/way2auto_jquery/frames-and-windows.php#load_box";
+    private static final String EXPECTED_PAGE_TITLE = "jQuery UI Datepicker - Default functionality";
+    private static final int EXPECTED_TAB_COUNT = 3;
+    private static final int SECOND_TAB_INDEX = 1;
+    private static final int THIRD_TAB_INDEX = 2;
+
     /**
      * Настройка браузера перед выполнением каждого теста (@BeforeEach).
      * Инициализирует драйвер ChromeDriver, подключает объект FramesAndWindowsPages
@@ -26,17 +33,18 @@ public class FrameAndWindowsTest {
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
-        framesAndWindowsPages = new FramesAndWindowsPages(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://way2automation.com/way2auto_jquery/frames-and-windows.php#load_box");
+
+        framesAndWindowsPages = new FramesAndWindowsPages(driver);
+        tabsHelper= new TabsHelper(driver);
+        driver.get(BASE_URL);
     }
     /**
      * Тест проверяет открытие нескольких вкладок (tabs) и корректность переключения между ними.
      *
      * Шаги:
-     * 1. Переключиться на iframe, содержащий ссылку.
-     * 2. Нажать на ссылку для открытия новой вкладки.
+     * 1. Нажать на ссылку для открытия новой вкладки.
      * 3. Переключиться на вторую вкладку и нажать на ещё одну ссылку.
      * 4. Проверить, что открылось три вкладки.
      * 5. Убедиться, что заголовок третьей вкладки соответствует ожидаемому значению.
@@ -49,23 +57,18 @@ public class FrameAndWindowsTest {
      */
     @Test
     public void testMultipleTabs() {
-        framesAndWindowsPages.switchToFrame();
         framesAndWindowsPages.blankClick();
 
-        Set<String> windowHandles = driver.getWindowHandles();
-        ArrayList<String> tabs = new ArrayList<>(windowHandles);
+        tabsHelper.updateTabs();
+        tabsHelper.switchToTab(SECOND_TAB_INDEX);
 
-        driver.switchTo().window(tabs.get(1));
-        framesAndWindowsPages.blankClick();
+        framesAndWindowsPages.blankClickWithoutFrame();
 
-        windowHandles = driver.getWindowHandles();
-        tabs = new ArrayList<>(windowHandles);
+        tabsHelper.updateTabs();
+        assertEquals(EXPECTED_TAB_COUNT, tabsHelper.getTabCount(), "Количество вкладок не равно трём");
 
-        assertEquals(3, tabs.size(), "Количество вкладок не равно трем");
-
-        driver.switchTo().window(tabs.get(2));
-        String expectedPageTitle = "jQuery UI Datepicker - Default functionality";
-        assertEquals(expectedPageTitle, driver.getTitle(), "Заголовок третьей вкладки не совпадает.");
+        tabsHelper.switchToTab(THIRD_TAB_INDEX);
+        assertEquals(EXPECTED_PAGE_TITLE, driver.getTitle(), "Заголовок третьей вкладки не совпадает.");
     }
     /**
      * Закрытие браузера после выполнения каждого теста (@AfterEach).

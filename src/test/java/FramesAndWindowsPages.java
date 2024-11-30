@@ -42,7 +42,12 @@ public class FramesAndWindowsPages {
      * После нажатия на данный элемент, WebDriver продолжит работать с текущей вкладкой,
      * но новая вкладка появится в списке доступных окон.
      */
-    public void blankClick() {
+    public void blankClickWithoutFrame() {
+        blank.click();
+    }
+
+    public void blankClick(){
+        switchToFrame();
         blank.click();
     }
 
