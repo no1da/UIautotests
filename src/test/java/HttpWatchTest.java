@@ -14,13 +14,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * 3. Проверка, что защищённое содержимое доступно после авторизации.
  */
 public class HttpWatchTest {
-    protected HttpWatchPage httpWatchPage;
-    protected WebDriver driver;
-    protected String baseUrl;
-    protected String url;
-    protected String authUrl;
-    protected String username;
-    protected String password;
+    private HttpWatchPage httpWatchPage;
+    private WebDriver driver;
+    private String baseUrl;
+    private String url;
+    private String authUrl;
+    private String username;
+    private String password;
     /**
      * Метод setUp() выполняется перед каждым тестом.
      * На его этапе выполняется:
@@ -34,7 +34,7 @@ public class HttpWatchTest {
         url = "http://www.httpwatch.com/httpgallery/authentication/#showExample10";
         username = "httpwatch";
         password = "httpwatch";
-        authUrl = "http://" + username + ":" + password + "@" + baseUrl;
+        authUrl = String.format("http://%s:%s@%s", username, password, baseUrl);
         driver = new ChromeDriver();
         httpWatchPage = new HttpWatchPage(driver);
         driver.manage().window().maximize();
