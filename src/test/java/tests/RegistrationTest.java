@@ -16,6 +16,8 @@ import static org.testng.Assert.assertTrue;
 public class RegistrationTest {
     protected PPWRegistrationPage ppwRegistrationPage;
     protected WebDriver driver;
+
+    private static final String BASE_URL = "https://www.way2automation.com/angularjs-protractor/registeration/#/login";
     /**
      * Метод инициализации, выполняемый перед каждым тестом.
      * Создает новый экземпляр WebDriver, открывает браузер,
@@ -27,7 +29,7 @@ public class RegistrationTest {
         ppwRegistrationPage = new PPWRegistrationPage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.way2automation.com/angularjs-protractor/registeration/#/login");
+        driver.get(BASE_URL);
     }
     /**
      * DataProvider для возвращения различных наборов данных для теста авторизации.
@@ -37,9 +39,9 @@ public class RegistrationTest {
     @DataProvider(name = "loginData")
     public Object[][] loginData() {
         return new Object[][]{
-                {"angular", "password", "123"},
-                {"angular1", "password", "123"},
-                {"angular", "password1", "123"},
+                {"angular", "password", "123", true},
+                {"angular1", "password", "123", false},
+                {"angular", "password1", "123", false}
         };
     }
     /**
@@ -48,17 +50,15 @@ public class RegistrationTest {
      * @param username  Имя пользователя для входа.
      * @param password  Пароль для входа.
      * @param username1 Пароль для входа.
+     * @param expectedSuccess  Ожидаемый результат (true = успешный логин, false = неуспешный логин).
      */
     @Test(dataProvider = "loginData")
-    public void testRegistration(String username, String password, String username1) {
+    public void testRegistration(String username, String password, String username1, boolean expectedSuccess) {
         ppwRegistrationPage.fillFieldsLogin(username, password, username1);
         ppwRegistrationPage.clickLogin();
-        boolean log = ppwRegistrationPage.findLogged();
-        if (log) {
-            assertTrue(log, ppwRegistrationPage.getTextAuthAllert());
-        } else {
-            assertTrue(log);
-        }
+        boolean isLoggedIn = ppwRegistrationPage.findLogged();
+
+        assertTrue(isLoggedIn == expectedSuccess, ppwRegistrationPage.getTextAuthAllert());
     }
     /**
      * Метод, выполняемый после каждого теста.
