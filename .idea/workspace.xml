@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TabsHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FramesAndWindowsPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FramesAndWindowsPages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,23 +36,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.FrameAndWindowsTest.testMultipleTabs.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FramesAndWindowsPages.testMultipleTabs.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;U11Tabs&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Шпак/Desktop/SimbirSoft/UIautotests/UIautotests/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.FrameAndWindowsTest.testMultipleTabs.executor": "Run",
+    "JUnit.FramesAndWindowsPages.testMultipleTabs.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.FrameAndWindowsTest.executor": "Run",
+    "git-widget-placeholder": "U11Tabs",
+    "kotlin-language-version-configured": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Шпак/Desktop/SimbirSoft/UIautotests/UIautotests/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.FrameAndWindowsTest.testMultipleTabs">
+}]]></component>
+  <component name="RunManager" selected="JUnit.FrameAndWindowsTest">
+    <configuration name="FrameAndWindowsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FrameAndWindowsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FrameAndWindowsTest.testMultipleTabs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UIautotests" />
       <option name="PACKAGE_NAME" value="" />
@@ -75,12 +83,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FrameAndWindowsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FrameAndWindowsTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FrameAndWindowsTest" />
+        <item itemvalue="TestNG.FrameAndWindowsTest" />
         <item itemvalue="JUnit.FramesAndWindowsPages.testMultipleTabs" />
         <item itemvalue="JUnit.FrameAndWindowsTest.testMultipleTabs" />
         <item itemvalue="JUnit.FrameAndWindowsTest.testMultipleTabs" />
-        <item itemvalue="JUnit.FramesAndWindowsPages.testMultipleTabs" />
       </list>
     </recent_temporary>
   </component>

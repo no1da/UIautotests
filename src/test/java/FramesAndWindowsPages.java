@@ -29,26 +29,32 @@ public class FramesAndWindowsPages {
     /**
      * Метод, переключающий фокус WebDriver на iframe.
      *
-     * Используется, если элементы находятся внутри элемента `iframe`,
-     * который нужно сначала активировать для дальнейшей работы.
+     * @return текущий экземпляр FramesAndWindowsPages для поддержки Fluent Interface.
      */
-    public void switchToFrame(){
+    public FramesAndWindowsPages switchToFrame() {
         driver.switchTo().frame(frameElement);
+        return this;
     }
 
     /**
      * Метод для нажатия на ссылку, которая открывает новую вкладку/окно браузера.
      *
-     * После нажатия на данный элемент, WebDriver продолжит работать с текущей вкладкой,
-     * но новая вкладка появится в списке доступных окон.
+     * @return текущий экземпляр FramesAndWindowsPages для поддержки Fluent Interface.
      */
-    public void blankClickWithoutFrame() {
+    public FramesAndWindowsPages blankClickWithoutFrame() {
         blank.click();
+        return this;
     }
 
-    public void blankClick(){
+    /**
+     * Метод для нажатия на ссылку в iframe.
+     *
+     * @return текущий экземпляр FramesAndWindowsPages для поддержки Fluent Interface.
+     */
+    public FramesAndWindowsPages blankClick() {
         switchToFrame();
         blank.click();
+        return this;
     }
 
 }
