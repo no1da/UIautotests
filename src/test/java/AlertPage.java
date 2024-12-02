@@ -34,30 +34,34 @@ public class AlertPage {
      * Переключает контекст WebDriver'а на iframe, чтобы получить доступ
      * к вложенному содержимому, включая элементы iframe.
      */
-    public void switchToFrame() {
+    public AlertPage switchToFrame() {
         driver.switchTo().frame(iframe);
+        return this;
     }
     /**
      * Нажимает на кнопку "Input Alert", чтобы перейти к функциональности,
      * связанной с alert (всплывающими окнами).
      */
-    public void clickButtonInputAlert() {
+    public AlertPage clickButtonInputAlert() {
         buttonInputAlert.click();
+        return this;
     }
     /**
      * Нажимает кнопку, которая вызывает JavaScript prompt-окно.
      */
-    public void clickButtonClick() {
+    public AlertPage clickButtonClick() {
         buttonClick.click();
+        return this;
     }
     /**
      * Взаимодействует с JavaScript-alert (prompt) окном.
      * Вводит текст в поле ввода окна и нажимает кнопку "OK" для подтверждения действия.
      */
-    public void alertAccept() {
+    public AlertPage alertAccept() {
         Alert alert = driver.switchTo().alert();
         alert.sendKeys("Snape");
         alert.accept();
+        return this;
     }
     /**
      * Возвращает текст из элемента, который отображает результат взаимодействия

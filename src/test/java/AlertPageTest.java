@@ -43,11 +43,12 @@ public class AlertPageTest {
      */
     @Test
     public void testAlert() {
-        alertPage.clickButtonInputAlert();
-        alertPage.switchToFrame();
-        alertPage.clickButtonClick();
-        alertPage.alertAccept();
-        Assertions.assertEquals(EXPECTED_MESSAGE, alertPage.getMessageBoxText());
+        alertPage.clickButtonInputAlert()
+                .switchToFrame()
+                .clickButtonClick()
+                .alertAccept();
+
+        Assertions.assertEquals(EXPECTED_MESSAGE, alertPage.getMessageBoxText(), "Сообщение не совпадает с ожидаемым.");
     }
     /**
      * Завершение работы в браузере после каждого теста.
