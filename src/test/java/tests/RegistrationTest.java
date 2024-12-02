@@ -49,16 +49,17 @@ public class RegistrationTest {
      *
      * @param username  Имя пользователя для входа.
      * @param password  Пароль для входа.
-     * @param username1 Пароль для входа.
-     * @param expectedSuccess  Ожидаемый результат (true = успешный логин, false = неуспешный логин).
+     * @param username1 Дополнительное имя пользователя.
+     * @param expectedSuccess Ожидаемый результат (true = успешный логин, false = неуспешный логин).
      */
     @Test(dataProvider = "loginData")
     public void testRegistration(String username, String password, String username1, boolean expectedSuccess) {
-        ppwRegistrationPage.fillFieldsLogin(username, password, username1);
-        ppwRegistrationPage.clickLogin();
-        boolean isLoggedIn = ppwRegistrationPage.findLogged();
+        boolean isLoggedIn = ppwRegistrationPage
+                .fillFieldsLogin(username, password, username1)
+                .clickLogin()
+                .findLogged();
 
-        assertTrue(isLoggedIn == expectedSuccess, ppwRegistrationPage.getTextAuthAllert());
+        assertTrue(isLoggedIn == expectedSuccess);
     }
     /**
      * Метод, выполняемый после каждого теста.
