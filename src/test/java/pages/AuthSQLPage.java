@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,15 +15,16 @@ import java.time.Duration;
  */
 public class AuthSQLPage {
     private WebDriver driver;
-    private WebDriverWait wait;
-    @FindBy(xpath = "/html/body/table[2]/tbody/tr/td[1]/form/table/tbody/tr[1]/td/input[1]")
+    private WebDriverWait waiter;
+    @FindBy(xpath = "//form[@name='frmlogin']//input[@type='text' and @name='login']")
     private WebElement inputLogin;
-    @FindBy(xpath = "/html/body/table[2]/tbody/tr/td[1]/form/table/tbody/tr[1]/td/input[2]")
+    @FindBy(xpath = "//form[@name='frmlogin']//input[@type='password' and @name='psw']")
     private WebElement inputPassword;
-    @FindBy(xpath = "/html/body/table[2]/tbody/tr/td[1]/form/table/tbody/tr[2]/td[1]/input")
+    @FindBy(xpath = "//form[@name=\"frmlogin\"]//input[@type=\"submit\" and @name=\"subm1\"]")
     private WebElement inputSubmit;
-    @FindBy(xpath = "/html/body/table[1]/tbody/tr/td[3]/b/a")
+    @FindBy(css = "a.none[href=\"/personal.php\"]")
     private WebElement username;
+
     /**
      * Конструктор класса AuthSQLPage.
      *
@@ -32,21 +32,45 @@ public class AuthSQLPage {
      */
     public AuthSQLPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
+
     /**
-     * Заполняет поля авторизации и отправляет форму.
+     * Заполняет поле логина.
      *
-     * @param login    логин пользователя.
-     * @param password пароль пользователя.
+     * @param login логин пользователя.
+     * @return текущий экземпляр AuthSQLPage для цепочки методов.
      */
-    @Step("Fill in the authentication fields with login: {login} and password: {password}")
-    public void fillFieldsAuth(String login, String password) {
+    @Step("Fill in the login field with login: {login}")
+    public AuthSQLPage enterLogin(String login) {
         inputLogin.sendKeys(login);
-        inputPassword.sendKeys(password);
-        inputSubmit.click();
+        return this;
     }
+
+    /**
+     * Заполняет поле пароля.
+     *
+     * @param password пароль пользователя.
+     * @return текущий экземпляр AuthSQLPage для цепочки методов.
+     */
+    @Step("Fill in the password field")
+    public AuthSQLPage enterPassword(String password) {
+        inputPassword.sendKeys(password);
+        return this;
+    }
+
+    /**
+     * Отправляет форму авторизации.
+     *
+     * @return текущий экземпляр AuthSQLPage для цепочки методов.
+     */
+    @Step("Submit the login form")
+    public AuthSQLPage submit() {
+        inputSubmit.click();
+        return this;
+    }
+
     /**
      * Находит имя Usera и проверяет его видимость.
      *

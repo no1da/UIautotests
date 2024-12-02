@@ -2,8 +2,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.idea/
-.idea/workspace.xml
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -14,7 +12,6 @@ target/
 *.iml
 *.ipr
 .idea
-.idea/workspace.xml
 
 ### NetBeans ###
 /nbproject/private/
@@ -29,4 +26,7 @@ build/
 ### VS Code ###
 .vscode/
 
-*.xml
+### Mac OS ###
+.DS_Store
+cookies.txt
+.idea/workspace.xml
