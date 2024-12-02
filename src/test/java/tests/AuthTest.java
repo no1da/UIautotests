@@ -2,6 +2,7 @@ package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -11,27 +12,36 @@ import utils.Config;
 import utils.CookieManager;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @Epic("Authentication Module")
 public class AuthTest {
+    private static Config config;
     private final String cookiesFilePath = "cookies.txt";
-    protected AuthSQLPage authSQLPage;
-    protected WebDriver driver;
-    protected Config config;
+    private AuthSQLPage authSQLPage;
+    private WebDriver driver;
+
+    /**
+     * Метод инициализации, выполняемый один раз перед запуском всех тестов.
+     * Создает новый экземпляр WebDriver и конфигурации.
+     */
+    @BeforeAll
+    public static void setUpAll() {
+        config = new Config();
+    }
 
     /**
      * Метод инициализации, выполняемый перед каждым тестом.
-     * Создает новый экземпляр WebDriver, открывает браузер,
-     * настраивает его и переходит на целевой URL, определенный в конфигурации.
+     * Переходит на целевой URL, определенный в конфигурации.
      */
     @BeforeEach
     @Step("Setting up the web driver and navigating to the authentication URL")
     public void setUp() {
-        config = new Config();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(); // Инициализация драйвера перед каждым тестом
         authSQLPage = new AuthSQLPage(driver);
         driver.manage().window().maximize();
         driver.get(config.getProperty("auth.url"));
     }
+
     /**
      * Тест для проверки процесса авторизации с использованием учетных данных.
      * Заполняет поля авторизации и сохраняет куки, затем проверяет,
@@ -42,10 +52,15 @@ public class AuthTest {
     @Story("Login with credentials")
     @Severity(SeverityLevel.CRITICAL)
     public void testLogin() {
-        authSQLPage.fillFieldsAuth(config.getProperty("login"), config.getProperty("password"));
+        authSQLPage
+                .enterLogin(config.getProperty("login"))
+                .enterPassword(config.getProperty("password"))
+                .submit();
+
         CookieManager.saveCookies(driver, cookiesFilePath);
         assertTrue(authSQLPage.findUsername());
     }
+
     /**
      * Тест для проверки процесса авторизации с использованием сохраненных куков.
      * Загружает куки, обновляет страницу и проверяет,
@@ -60,7 +75,6 @@ public class AuthTest {
         driver.navigate().refresh();
         assertTrue(authSQLPage.findUsername());
     }
-
 
     /**
      * Метод, выполняемый после каждого теста.
