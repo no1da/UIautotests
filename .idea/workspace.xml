@@ -4,15 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="" />
+    <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LifeTimePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LifeTimePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageCourses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageFuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageFuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageNavigationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageNavigationBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MainPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2pF7q60Hv1UPIqN3AfsVqSDnen1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,13 +45,94 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.PageTest.executor": "Run",
+    "JUnit.PageTest.goToLifeTimeTest.executor": "Run",
+    "JUnit.PageTest.wayPageFuterTest.executor": "Run",
+    "JUnit.PageTest.wayPageHeaderTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "UI1AutoTests",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Шпак/Desktop/SimbirSoft/UIautotests/UIautotests/src/main/java/org/example/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.PageTest.wayPageFuterTest">
+    <configuration name="PageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageTest.goToLifeTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="goToLifeTimeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageTest.wayPageFuterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="wayPageFuterTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageTest.wayPageHeaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="wayPageHeaderTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PageTest.wayPageFuterTest" />
+        <item itemvalue="JUnit.PageTest" />
+        <item itemvalue="JUnit.PageTest.wayPageHeaderTest" />
+        <item itemvalue="JUnit.PageTest.goToLifeTimeTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -45,6 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732350159063</updated>
       <workItem from="1732350160006" duration="3000" />
+      <workItem from="1733232424134" duration="2366000" />
     </task>
     <servers />
   </component>

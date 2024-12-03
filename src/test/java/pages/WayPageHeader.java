@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 /**
  * Класс WayPageHeader расширяет функциональность класса WayPage,
  * предоставляя методы для взаимодействия с элементами заголовка страницы.
@@ -11,30 +11,25 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * такой как номера телефонов и ссылки на социальные сети.
  */
 public class WayPageHeader extends WayPage {
-
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[1]/div/div/div/div/div/section[1]" +
-            "/div/div/div/div[2]/div/ul/li[1]/a/span[2]")
+    @FindBy(css = "span.lazyloaded")
     private WebElement headerPhoneNumber1;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[1]/div/div/div/div/div/section[1]" +
-            "/div/div/div/div[2]/div/ul/li[2]/a/span[2]")
+    @FindBy(css = "li.elementor-inline-item:nth-child(2) > a:nth-child(1) > span:nth-child(2)")
     private WebElement headerPhoneNumber2;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[1]/div/div/div/div/div/section[1]" +
-            "/div/div/div/div[2]/div/ul/li[3]/a/span[2]")
+    @FindBy(css = "li.elementor-inline-item:nth-child(3) > a:nth-child(1) > span:nth-child(2)")
     private WebElement headerPhoneNumber3;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[1]/div/div/div/div/div/section[1]" +
-            "/div/div/div/div[2]/div/ul/li[4]/a/span[2]")
+    @FindBy(css = "li.elementor-inline-item:nth-child(4) > a:nth-child(1) > span:nth-child(2)")
     private WebElement headerSkype;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[1]/div/div/div/div/div/section[1]" +
-            "/div/div/div/div[2]/div/ul/li[5]/a/span[2]")
+    @FindBy(css = "li.elementor-inline-item:nth-child(5) > a:nth-child(1) > span:nth-child(2)")
     private WebElement headerMail;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[2]/div/div/div/a[1]")
+    @FindBy(css = "a.ast-builder-social-element:nth-child(1)")
     private WebElement faceBook;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[2]/div/div/div/a[2]")
+    @FindBy(css = "a.ast-builder-social-element:nth-child(2)")
     private WebElement linkedIn;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[2]/div/div/div/a[3]")
+    @FindBy(css = "a.ast-builder-social-element:nth-child(3)")
     private WebElement google;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div/div/div[2]/div/div/div/a[4]")
+    @FindBy(css = "a.ast-builder-social-element:nth-child(4)")
     private WebElement youTube;
+
     /**
      * Конструктор класса WayPageHeader.
      * Инициализирует веб-драйвер, унаследованный от класса WayPage.
@@ -52,9 +47,10 @@ public class WayPageHeader extends WayPage {
      * @return текст первого номера телефона.
      */
     public String getPhoneNumber1() {
-        wait.until(ExpectedConditions.visibilityOf(headerPhoneNumber1));
+        waiter.waitForVisibility(headerPhoneNumber1);
         return headerPhoneNumber1.getText();
     }
+
     /**
      * Получает текст второго номера телефона из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -62,9 +58,10 @@ public class WayPageHeader extends WayPage {
      * @return текст второго номера телефона.
      */
     public String getPhoneNumber2() {
-        wait.until(ExpectedConditions.visibilityOf(headerPhoneNumber2));
+        waiter.waitForVisibility(headerPhoneNumber2);
         return headerPhoneNumber2.getText();
     }
+
     /**
      * Получает текст третьего номера телефона из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -72,9 +69,10 @@ public class WayPageHeader extends WayPage {
      * @return текст третьего номера телефона.
      */
     public String getPhoneNumber3() {
-        wait.until(ExpectedConditions.visibilityOf(headerPhoneNumber3));
+        waiter.waitForVisibility(headerPhoneNumber3);
         return headerPhoneNumber3.getText();
     }
+
     /**
      * Получает текст ссылки на Skype из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -82,9 +80,10 @@ public class WayPageHeader extends WayPage {
      * @return текст ссылки на Skype.
      */
     public String getSkype() {
-        wait.until(ExpectedConditions.visibilityOf(headerSkype));
+        waiter.waitForVisibility(headerSkype);
         return headerSkype.getText();
     }
+
     /**
      * Получает текст адреса электронной почты из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -92,9 +91,10 @@ public class WayPageHeader extends WayPage {
      * @return текст адреса электронной почты.
      */
     public String getMail() {
-        wait.until(ExpectedConditions.visibilityOf(headerMail));
+        waiter.waitForVisibility(headerMail);
         return headerMail.getText();
     }
+
     /**
      * Получает URL Facebook из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -102,9 +102,10 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на Facebook.
      */
     public String getFaceBook() {
-        wait.until(ExpectedConditions.visibilityOf(faceBook));
+        waiter.waitForVisibility(faceBook);
         return faceBook.getAttribute("href");
     }
+
     /**
      * Получает URL LinkedIn из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -112,9 +113,10 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на LinkedIn.
      */
     public String getLinkedIn() {
-        wait.until(ExpectedConditions.visibilityOf(linkedIn));
+        waiter.waitForVisibility(linkedIn);
         return linkedIn.getAttribute("href");
     }
+
     /**
      * Получает URL Google из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -122,9 +124,10 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на Google.
      */
     public String getGoogle() {
-        wait.until(ExpectedConditions.visibilityOf(google));
+        waiter.waitForVisibility(google);
         return google.getAttribute("href");
     }
+
     /**
      * Получает URL YouTube из заголовка.
      * Включает ожидание видимости элемента перед его извлечением.
@@ -132,7 +135,7 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на YouTube.
      */
     public String getYouTube() {
-        wait.until(ExpectedConditions.visibilityOf(youTube));
+        waiter.waitForVisibility(youTube);
         return youTube.getAttribute("href");
     }
 }
