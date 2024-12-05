@@ -5,30 +5,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Класс WayPageFuter расширяет функциональность класса WayPage,
+ * Класс WayPageFuter расширяет функциональность класса BasePage,
  * предоставляя методы для взаимодействия с элементами футера страницы.
  * Этот класс включает методы для получения контактной информации,
  * такой как адрес, номера телефонов и электронные почты.
  */
-public class WayPageFuter extends WayPage {
+public class WayPageFooter extends WayPage {
     @FindBy(css = ".elementor-icon-list-item > .elementor-icon-list-text")
-    private WebElement futerAdress;
+    private WebElement footerAdress;
     @FindBy(xpath = "//span[text()='+91 97111-11-558']")
-    private WebElement futerPhoneNumber1;
+    private WebElement footerPhoneNumber1;
     @FindBy(xpath = "//span[text()='+91 97111-91-558']")
-    private WebElement futerPhoneNumber2;
+    private WebElement footerPhoneNumber2;
     @FindBy(xpath = "//span[text()='trainer@way2automation.com']")
-    private WebElement futerMail1;
+    private WebElement footerMail1;
     @FindBy(xpath = "//span[text()='seleniumcoaching@gmail.com']")
-    private WebElement futerMail2;
+    private WebElement footerMail2;
 
     /**
      * Конструктор класса WayPageFuter.
-     * Инициализирует веб-драйвер, унаследованный от класса WayPage.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
-    public WayPageFuter(WebDriver driver) {
+    public WayPageFooter(WebDriver driver) {
         super(driver);
     }
 
@@ -38,9 +38,8 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст адреса из футера.
      */
-    public String getFuterAdress() {
-        waiter.waitForVisibility(futerAdress);
-        return futerAdress.getText();
+    public String getFooterAdress() {
+        return waitAndGetText(footerAdress);
     }
 
     /**
@@ -49,9 +48,8 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст первого номера телефона из футера.
      */
-    public String getFuterPhoneNumber1() {
-        waiter.waitForVisibility(futerPhoneNumber1);
-        return futerPhoneNumber1.getText();
+    public String getFooterPhoneNumber1() {
+        return waitAndGetText(footerPhoneNumber1);
     }
 
     /**
@@ -60,9 +58,8 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст второго номера телефона из футера.
      */
-    public String getFuterPhoneNumber2() {
-        waiter.waitForVisibility(futerPhoneNumber2);
-        return futerPhoneNumber2.getText();
+    public String getFooterPhoneNumber2() {
+        return waitAndGetText(footerPhoneNumber2);
     }
 
     /**
@@ -71,9 +68,8 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст первого адреса электронной почты из футера.
      */
-    public String getFuterMail1() {
-        waiter.waitForVisibility(futerMail1);
-        return futerMail1.getText();
+    public String getFooterMail1() {
+        return waitAndGetText(footerMail1);
     }
 
     /**
@@ -82,8 +78,7 @@ public class WayPageFuter extends WayPage {
      *
      * @return текст второго адреса электронной почты из футера.
      */
-    public String getFuterMail2() {
-        waiter.waitForVisibility(futerMail2);
-        return futerMail2.getText();
+    public String getFooterMail2() {
+        return waitAndGetText(footerMail2);
     }
 }

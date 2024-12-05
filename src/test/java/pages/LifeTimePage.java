@@ -3,31 +3,23 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utils.Waiter;
-
-import java.time.Duration;
 
 /**
  * Класс LifeTimePage представляет веб-страницу, связанную с отдельным разделом приложения.
  * Он используется для взаимодействия с элементами на странице жизни и управления проверкой их состояния.
  */
-public class LifeTimePage {
-    private WebDriver driver;
-    private Waiter waiter;
+public class LifeTimePage extends BasePage {
     @FindBy(css = "article#post-25580 h1.elementor-heading-title.elementor-size-default")
     private WebElement header;
 
     /**
      * Конструктор класса LifeTimePage.
-     * Инициализирует WebDriver, WebDriverWait и элементы страницы.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
     public LifeTimePage(WebDriver driver) {
-        this.driver = driver;
-        this.waiter = new Waiter(driver, Duration.ofSeconds(10));
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     /**
@@ -37,7 +29,6 @@ public class LifeTimePage {
      * @return текст заголовка страницы.
      */
     public String getTextHeader() {
-        waiter.waitForVisibility(header);
-        return header.getText();
+        return waitAndGetText(header);
     }
 }

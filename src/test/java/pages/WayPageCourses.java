@@ -8,26 +8,23 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Класс WayPageCourses расширяет функциональность класса WayPage,
+ * Класс WayPageCourses расширяет функциональность класса BasePage,
  * предоставляя методы для взаимодействия с элементами меню курсов.
  * Этот класс включает методы для получения информации о курсах и прокрутки карусели курсов.
  */
-public class WayPageCourses extends WayPage {
-    @FindBy(xpath = "//div[contains(@class, 'swiper-container-wrap') and contains(@class, 'pp-info-box-carousel" +
-            "-wrap')]//div[contains(@class, 'swiper-slide') and contains(@class, 'swiper-slide-active')]\n")
+public class WayPageCourses extends BasePage {
+    @FindBy(css = "div.swiper-slide.swiper-slide-active h4.pp-info-box-title")
     private WebElement titleActiveCurse;
-    @FindBy(xpath = "//div[contains(@class, 'pp-slider-arrow') and contains(@class, 'swiper-button-next')]")
+    @FindBy(css = "div.pp-slider-arrow>.fas.fa-angle-right")
     private WebElement leftScrollButton;
-    @FindBy(css = ".elementor-slides-wrapper > div:nth-child(4)")
+    @FindBy(css = "div.pp-slider-arrow>.fas.fa-angle-left")
     private WebElement rightScrollButton;
-    @FindBy(xpath = "//div[contains(@class, 'swiper-container-wrap') and contains(@class, 'pp-info-box-carousel-wrap')]")
+    @FindBy(css = ".swiper-container-wrap")
     private WebElement menuCourses;
-    @FindBy(css = ".eicon-close")
-    private WebElement closeButton;
 
     /**
      * Конструктор класса WayPageCourses.
-     * Инициализирует веб-драйвер, унаследованный от класса WayPage.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
@@ -46,13 +43,10 @@ public class WayPageCourses extends WayPage {
     public String getTitleActiveCourse() {
         waiter.waitForVisibility(menuCourses);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//div[contains(@class, 'swiper-container-wrap') and contains(@class, 'pp-info-box-carousel-wrap')]")));
+        js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.cssSelector(".swiper-container-wrap")));
         Actions action = new Actions(driver);
         action.moveToElement(menuCourses).perform();
-        waiter.waitForClickability(closeButton);
-        closeButton.click();
-        waiter.waitForVisibility(titleActiveCurse);
-        return titleActiveCurse.getAttribute("data-swiper-slide-index");
+        return waitAndGetText(titleActiveCurse);
     }
 
     /**
@@ -60,9 +54,7 @@ public class WayPageCourses extends WayPage {
      * Ожидает, что кнопка прокрутки влево станет кликабельной и затем кликает по ней.
      */
     public WayPageCourses scrollCoursesLeft() {
-        waiter.waitForVisibility(leftScrollButton);
-        leftScrollButton.click();
-        return this;
+        return (WayPageCourses) waitAndClick(leftScrollButton);
     }
 
     /**
@@ -70,8 +62,6 @@ public class WayPageCourses extends WayPage {
      * Ожидает, что кнопка прокрутки вправо станет видимой и затем кликает по ней.
      */
     public WayPageCourses scrollCoursesRight() {
-        waiter.waitForVisibility(rightScrollButton);
-        rightScrollButton.click();
-        return this;
+        return (WayPageCourses) waitAndClick(rightScrollButton);
     }
 }

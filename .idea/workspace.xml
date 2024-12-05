@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Waiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/LifeTimePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LifeTimePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageCourses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageFuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageFuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageFuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageFooter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageHeader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageNavigationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageNavigationBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MainPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="U12Alerts" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -45,10 +47,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.PageTest.coursesTest.executor": "Run",
     "JUnit.PageTest.executor": "Run",
     "JUnit.PageTest.goToLifeTimeTest.executor": "Run",
     "JUnit.PageTest.wayPageFuterTest.executor": "Run",
     "JUnit.PageTest.wayPageHeaderTest.executor": "Run",
+    "JUnit.PageTest.wayPageTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "UI1AutoTests",
     "kotlin-language-version-configured": "true",
@@ -60,7 +64,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.PageTest.wayPageFuterTest">
+  <component name="RunManager" selected="JUnit.PageTest.wayPageHeaderTest">
     <configuration name="PageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UIautotests" />
       <extension name="coverage">
@@ -124,12 +128,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PageTest.wayPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="wayPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PageTest.wayPageFuterTest" />
-        <item itemvalue="JUnit.PageTest" />
         <item itemvalue="JUnit.PageTest.wayPageHeaderTest" />
         <item itemvalue="JUnit.PageTest.goToLifeTimeTest" />
+        <item itemvalue="JUnit.PageTest.wayPageFuterTest" />
+        <item itemvalue="JUnit.PageTest.wayPageTest" />
+        <item itemvalue="JUnit.PageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -156,6 +177,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

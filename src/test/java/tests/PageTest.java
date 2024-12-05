@@ -1,6 +1,7 @@
 package tests;
 
 import org.assertj.core.api.SoftAssertions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class PageTest extends MainPageTest {
     private WayPageHeader wayPageHeader;
-    private WayPageFuter wayPageFuter;
+    private WayPageFooter wayPageFuter;
     private LifeTimePage lifeTimePage;
     private WayPageNavigationBlock wayPageNavigationBlock;
     private WayPageCourses wayPageCourses;
@@ -91,22 +92,22 @@ public class PageTest extends MainPageTest {
      */
     @Test
     public void wayPageFuterTest() {
-        wayPageFuter = new WayPageFuter(driver);
+        wayPageFuter = new WayPageFooter(driver);
         SoftAssertions softAssertions = new SoftAssertions();
 
-        softAssertions.assertThat(wayPageFuter.getFuterAdress())
+        softAssertions.assertThat(wayPageFuter.getFooterAdress())
                 .as("Footer address should match")
                 .isEqualTo(config.getProperty("adress"));
-        softAssertions.assertThat(wayPageFuter.getFuterPhoneNumber1())
+        softAssertions.assertThat(wayPageFuter.getFooterPhoneNumber1())
                 .as("Footer phone number 1 should match")
                 .isEqualTo(config.getProperty("phoneNumber1"));
-        softAssertions.assertThat(wayPageFuter.getFuterPhoneNumber2())
+        softAssertions.assertThat(wayPageFuter.getFooterPhoneNumber2())
                 .as("Footer phone number 2 should match")
                 .isEqualTo(config.getProperty("phoneNumber2"));
-        softAssertions.assertThat(wayPageFuter.getFuterMail1())
+        softAssertions.assertThat(wayPageFuter.getFooterMail1())
                 .as("Footer email 1 should match")
                 .isEqualTo(config.getProperty("mail1"));
-        softAssertions.assertThat(wayPageFuter.getFuterMail2())
+        softAssertions.assertThat(wayPageFuter.getFooterMail2())
                 .as("Footer email 2 should match")
                 .isEqualTo(config.getProperty("mail2"));
 
@@ -115,15 +116,30 @@ public class PageTest extends MainPageTest {
 
     /**
      * Тестирует функциональность меню курсов. Сравнивает заголовок
-     * активного курса до и после прокрутки.
+     * активного курса до и после прокрутки налево.
      */
     @Test
-    public void coursesTest() {
+    public void coursesScrollLeftTest() {
         wayPageCourses = new WayPageCourses(driver);
         String titleCurse = wayPageCourses.getTitleActiveCourse();
         wayPageCourses.scrollCoursesLeft();
         String titleCurse2 = wayPageCourses.getTitleActiveCourse();
-        assertEquals(titleCurse, titleCurse2);
+        Assertions.assertNotSame(titleCurse, titleCurse2);
+    }
+
+    /**
+     * Тестирует функциональность меню курсов. Сравнивает заголовок
+     * активного курса до и после прокрутки направо.
+     */
+    @Test
+    public void coursesRightLeftTest() {
+        wayPageCourses = new WayPageCourses(driver);
+        String titleCurse = wayPageCourses.getTitleActiveCourse();
+        System.out.println(titleCurse);
+        wayPageCourses.scrollCoursesRight();
+        String titleCurse2 = wayPageCourses.getTitleActiveCourse();
+        System.out.println(titleCurse2);
+        Assertions.assertNotSame(titleCurse, titleCurse2);
     }
 
     /**

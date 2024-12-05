@@ -5,34 +5,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Класс WayPageHeader расширяет функциональность класса WayPage,
+ * Класс WayPageHeader расширяет функциональность класса BasePage,
  * предоставляя методы для взаимодействия с элементами заголовка страницы.
  * Этот класс включает методы для получения контактной информации,
  * такой как номера телефонов и ссылки на социальные сети.
  */
 public class WayPageHeader extends WayPage {
-    @FindBy(css = "span.lazyloaded")
+    @FindBy(css = "a.lazyloaded[href=\"https://wa.me/+919711111558\"]")
     private WebElement headerPhoneNumber1;
-    @FindBy(css = "li.elementor-inline-item:nth-child(2) > a:nth-child(1) > span:nth-child(2)")
+    @FindBy(css = "[href=\"https://wa.me/+919711191558\"]")
     private WebElement headerPhoneNumber2;
-    @FindBy(css = "li.elementor-inline-item:nth-child(3) > a:nth-child(1) > span:nth-child(2)")
+    @FindBy(css = "[href=\"tel:+16464800603\"]")
     private WebElement headerPhoneNumber3;
-    @FindBy(css = "li.elementor-inline-item:nth-child(4) > a:nth-child(1) > span:nth-child(2)")
+    @FindBy(css = "[href=\"skype:seleniumcoaching?chat\"]")
     private WebElement headerSkype;
-    @FindBy(css = "li.elementor-inline-item:nth-child(5) > a:nth-child(1) > span:nth-child(2)")
+    @FindBy(css = "[href=\"mailto:trainer@way2automation.com\"]")
     private WebElement headerMail;
-    @FindBy(css = "a.ast-builder-social-element:nth-child(1)")
+    @FindBy(css = "[href=\"https://www.facebook.com/way2automation\"]")
     private WebElement faceBook;
-    @FindBy(css = "a.ast-builder-social-element:nth-child(2)")
+    @FindBy(css = "[href=\"https://in.linkedin.com/in/rahul-arora-0490b751\"]")
     private WebElement linkedIn;
-    @FindBy(css = "a.ast-builder-social-element:nth-child(3)")
+    @FindBy(css = "[href=\"https://plus.google.com/u/0/+RamanAhujatheseleniumguru\"]")
     private WebElement google;
-    @FindBy(css = "a.ast-builder-social-element:nth-child(4)")
+    @FindBy(css = "[href=\"https://www.youtube.com/c/seleniumappiumtutorialtraining\"]")
     private WebElement youTube;
 
     /**
      * Конструктор класса WayPageHeader.
-     * Инициализирует веб-драйвер, унаследованный от класса WayPage.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
@@ -47,8 +47,7 @@ public class WayPageHeader extends WayPage {
      * @return текст первого номера телефона.
      */
     public String getPhoneNumber1() {
-        waiter.waitForVisibility(headerPhoneNumber1);
-        return headerPhoneNumber1.getText();
+        return waitAndGetHref(headerPhoneNumber1);
     }
 
     /**
@@ -58,8 +57,7 @@ public class WayPageHeader extends WayPage {
      * @return текст второго номера телефона.
      */
     public String getPhoneNumber2() {
-        waiter.waitForVisibility(headerPhoneNumber2);
-        return headerPhoneNumber2.getText();
+        return waitAndGetHref(headerPhoneNumber2);
     }
 
     /**
@@ -69,8 +67,7 @@ public class WayPageHeader extends WayPage {
      * @return текст третьего номера телефона.
      */
     public String getPhoneNumber3() {
-        waiter.waitForVisibility(headerPhoneNumber3);
-        return headerPhoneNumber3.getText();
+        return waitAndGetHref(headerPhoneNumber3);
     }
 
     /**
@@ -80,8 +77,7 @@ public class WayPageHeader extends WayPage {
      * @return текст ссылки на Skype.
      */
     public String getSkype() {
-        waiter.waitForVisibility(headerSkype);
-        return headerSkype.getText();
+        return waitAndGetHref(headerSkype);
     }
 
     /**
@@ -91,8 +87,7 @@ public class WayPageHeader extends WayPage {
      * @return текст адреса электронной почты.
      */
     public String getMail() {
-        waiter.waitForVisibility(headerMail);
-        return headerMail.getText();
+        return waitAndGetHref(headerMail);
     }
 
     /**
@@ -102,8 +97,7 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на Facebook.
      */
     public String getFaceBook() {
-        waiter.waitForVisibility(faceBook);
-        return faceBook.getAttribute("href");
+        return waitAndGetHref(faceBook);
     }
 
     /**
@@ -113,8 +107,7 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на LinkedIn.
      */
     public String getLinkedIn() {
-        waiter.waitForVisibility(linkedIn);
-        return linkedIn.getAttribute("href");
+        return waitAndGetHref(linkedIn);
     }
 
     /**
@@ -124,8 +117,7 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на Google.
      */
     public String getGoogle() {
-        waiter.waitForVisibility(google);
-        return google.getAttribute("href");
+        return waitAndGetHref(google);
     }
 
     /**
@@ -135,7 +127,6 @@ public class WayPageHeader extends WayPage {
      * @return URL ссылки на YouTube.
      */
     public String getYouTube() {
-        waiter.waitForVisibility(youTube);
-        return youTube.getAttribute("href");
+        return waitAndGetHref(youTube);
     }
 }
