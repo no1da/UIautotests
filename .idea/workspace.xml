@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AlertPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AlertPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DroppablePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DroppablePageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TabsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/TabsHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.AlertPageTest.testAlert.executor": "Run",
+    "JUnit.PageTest.coursesRightLeftTest.executor": "Run",
+    "JUnit.PageTest.coursesScrollLeftTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -55,7 +54,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PageTest.coursesScrollLeftTest">
     <configuration name="AlertPageTest.testAlert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UIautotests" />
       <option name="PACKAGE_NAME" value="tests" />
@@ -66,8 +65,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PageTest.coursesRightLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="coursesRightLeftTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageTest.coursesScrollLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="coursesScrollLeftTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PageTest.coursesScrollLeftTest" />
+        <item itemvalue="JUnit.PageTest.coursesRightLeftTest" />
         <item itemvalue="JUnit.AlertPageTest.testAlert" />
         <item itemvalue="JUnit.AlertPageTest.testAlert" />
         <item itemvalue="JUnit.AlertPageTest.testAlert" />

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import pages.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Класс тестирования страницы (https://www.way2automation.com/) содержит тесты для проверки различных элементов
@@ -137,8 +138,9 @@ public class PageTest extends MainPageTest {
         wayPageCourses = new WayPageCourses(driver);
         String titleCurse = wayPageCourses.getTitleActiveCourse();
         wayPageCourses.scrollCoursesLeft();
+        wayPageCourses.scrollCoursesLeft();
         String titleCurse2 = wayPageCourses.getTitleActiveCourse();
-        Assertions.assertNotSame(titleCurse, titleCurse2);
+        assertFalse(titleCurse.equals(titleCurse2));
     }
 
     /**
@@ -152,11 +154,9 @@ public class PageTest extends MainPageTest {
     public void coursesRightLeftTest() {
         wayPageCourses = new WayPageCourses(driver);
         String titleCurse = wayPageCourses.getTitleActiveCourse();
-        System.out.println(titleCurse);
         wayPageCourses.scrollCoursesRight();
         String titleCurse2 = wayPageCourses.getTitleActiveCourse();
-        System.out.println(titleCurse2);
-        Assertions.assertNotSame(titleCurse, titleCurse2);
+        assertFalse(titleCurse.equals(titleCurse2));
     }
 
     /**
