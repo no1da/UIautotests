@@ -1,92 +1,77 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 /**
  * Класс WayPage представляет веб-страницу с элементами, которые можно найти и с которыми можно взаимодействовать.
  * Он использует Selenium WebDriver для управления браузером и выполнения операций с элементами на странице.
  */
-
-public class WayPage {
-    protected WebDriver driver;
-    protected WebDriverWait wait;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[1]/div/div")
+public class WayPage extends BasePage {
+    @FindBy(css = "#ast-desktop-header")
     private WebElement header;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[2]/div/div")
+    @FindBy(css = ".ast-primary-header-bar > .site-primary-header-wrap")
     private WebElement navigationBlock;
-    @FindBy(xpath = "//*[@id=\"ast-desktop-header\"]/div[2]/div/div/div")
+    @FindBy(css = "a.elementor-button.elementor-slide-button[href=\"https://www.way2automation.com/lifetime-membership-club/\"]")
     private WebElement buttonRegistration;
-    @FindBy(xpath = "//*[@id=\"post-17\"]/div/div/section[4]")
+    @FindBy(css = "section.elementor-section.nitro-offscreen[data-settings*='\"shape_divider_bottom\":\"waves\"']")
     private WebElement listCourses;
-    @FindBy(xpath = "//*[@id=\"page\"]/div[2]/div/section/div[1]")
+    @FindBy(css = "div[data-elementor-type=\"footer\"]")
     private WebElement footer;
 
     /**
      * Конструктор класса WayPage.
-     * Инициализирует WebDriver, WebDriverWait и элементы страницы.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
     public WayPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
+
     /**
      * Находит заголовок страницы и проверяет его видимость.
      *
      * @return true, если заголовок видимый; иначе false.
      */
-    @Step("Check visibility of the header")
     public boolean findHeader() {
-        wait.until(ExpectedConditions.visibilityOf(header));
-        return header.isDisplayed();
+        return waitAndIsDisplayed(header);
     }
+
     /**
      * Находит навигационный блок и проверяет его видимость.
      *
      * @return true, если навигационный блок видимый; иначе false.
      */
-    @Step("Check visibility of the navigation block")
     public boolean findNavigationBlock() {
-        wait.until(ExpectedConditions.visibilityOf(navigationBlock));
-        return navigationBlock.isDisplayed();
+        return waitAndIsDisplayed(navigationBlock);
     }
+
     /**
      * Находит кнопку регистрации и проверяет ее видимость.
      *
      * @return true, если кнопка регистрации видимая; иначе false.
      */
-    @Step("Check visibility of the registration button")
     public boolean findButtonRegistration() {
-        wait.until(ExpectedConditions.visibilityOf(buttonRegistration));
-        return buttonRegistration.isDisplayed();
+        return waitAndIsDisplayed(buttonRegistration);
     }
+
     /**
      * Находит список курсов и проверяет его видимость.
      *
      * @return true, если список курсов видимый; иначе false.
      */
-    @Step("Check visibility of the courses list")
     public boolean findListCourses() {
-        wait.until(ExpectedConditions.visibilityOf(listCourses));
-        return listCourses.isDisplayed();
+        return waitAndIsDisplayed(listCourses);
     }
+
     /**
      * Находит футер страницы и проверяет его видимость.
      *
      * @return true, если футер видимый; иначе false.
      */
-    @Step("Check visibility of the footer")
     public boolean findFooter() {
-        wait.until(ExpectedConditions.visibilityOf(footer));
-        return footer.isDisplayed();
+        return waitAndIsDisplayed(footer);
     }
 }

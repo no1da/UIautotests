@@ -1,45 +1,40 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 /**
- * Класс WayPageNavigationBlock расширяет функциональность класса WayPage,
+ * Класс WayPageNavigationBlock расширяет функциональность класса BasePage,
  * предоставляя методы для взаимодействия с навигационным блоком страницы.
  * Этот класс включает методы, которые позволяют пользователю перемещаться
  * по меню и выбирать различные курсы.
  */
 public class WayPageNavigationBlock extends WayPage {
-    @FindBy(xpath = "//*[@id=\"menu-item-27580\"]/a/span[2]")
+    @FindBy(xpath = "//div[contains(@class, 'ast-main-header-wrap') and contains(@class, 'main-header-bar-wrap')]" +
+            "//span[@class='menu-text' and contains(text(), 'All Courses')]")
     private WebElement allCourses;
-    @FindBy(xpath = "//*[@id=\"menu-item-27581\"]/a")
+    @FindBy(css = ".ast-primary-header-bar .sub-menu a.menu-link[href=\"https://www.way2automation.com/lifetime-membership-club/\"]")
     private WebElement linkLifeTime;
-    @FindBy(xpath = "//*[@id=\"menu-item-27581\"]/a/span[2]")
-    private WebElement textLifeTime;
+
     /**
      * Конструктор класса WayPageNavigationBlock.
-     * Инициализирует веб-драйвер, унаследованный от класса WayPage.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
     public WayPageNavigationBlock(WebDriver driver) {
         super(driver);
     }
+
     /**
      * Метод для навигации к разделу "Пожизненный доступ".
      * Данный метод перемещается к элементу "Все курсы",
      * задерживает выполнение до его видимости,
      * затем перемещается к элементу "Пожизненный доступ" и кликает на него.
      */
-    @Step("Navigate to 'Lifetime Access' page")
-    public void goToLifeTime() {
-        wait.until(ExpectedConditions.visibilityOf(allCourses));
-        Actions action = new Actions(driver);
-        action.moveToElement(allCourses).perform();
-        wait.until(ExpectedConditions.visibilityOf(linkLifeTime));
-        action.moveToElement(linkLifeTime).click().perform();
+    public WayPageNavigationBlock goToLifeTime() {
+        waitAndMove(allCourses);
+        return (WayPageNavigationBlock) waitAndClick(linkLifeTime);
     }
 }

@@ -1,90 +1,84 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 /**
- * Класс WayPageFuter расширяет функциональность класса WayPage,
+ * Класс WayPageFuter расширяет функциональность класса BasePage,
  * предоставляя методы для взаимодействия с элементами футера страницы.
  * Этот класс включает методы для получения контактной информации,
  * такой как адрес, номера телефонов и электронные почты.
  */
-public class WayPageFuter extends WayPage {
+public class WayPageFooter extends WayPage {
+    @FindBy(css = ".elementor-icon-list-item > .elementor-icon-list-text")
+    private WebElement footerAdress;
+    @FindBy(xpath = "//span[text()='+91 97111-11-558']")
+    private WebElement footerPhoneNumber1;
+    @FindBy(xpath = "//span[text()='+91 97111-91-558']")
+    private WebElement footerPhoneNumber2;
+    @FindBy(xpath = "//span[text()='trainer@way2automation.com']")
+    private WebElement footerMail1;
+    @FindBy(xpath = "//span[text()='seleniumcoaching@gmail.com']")
+    private WebElement footerMail2;
 
-    @FindBy(xpath = "//*[@id=\"page\"]/div[2]/div/section/div[2]/div/div/section[1]/div/div[4]/div/div[2]/div/ul/li[1]/span[2]")
-    private WebElement futerAdress;
-    @FindBy(xpath = "//*[@id=\"page\"]/div[2]/div/section/div[2]/div/div/section[1]/div/div[4]/div/div[2]/div/ul/li[2]/a/span[2]")
-    private WebElement futerPhoneNumber1;
-    @FindBy(xpath = "//*[@id=\"page\"]/div[2]/div/section/div[2]/div/div/section[1]/div/div[4]/div/div[2]/div/ul/li[3]/a/span[2]")
-    private WebElement futerPhoneNumber2;
-    @FindBy(xpath = "//*[@id=\"page\"]/div[2]/div/section/div[2]/div/div/section[1]/div/div[4]/div/div[2]/div/ul/li[4]/a/span[2]")
-    private WebElement futerMail1;
-    @FindBy(xpath = "//*[@id=\"page\"]/div[2]/div/section/div[2]/div/div/section[1]/div/div[4]/div/div[2]/div/ul/li[5]/a/span[2]")
-    private WebElement futerMail2;
     /**
      * Конструктор класса WayPageFuter.
-     * Инициализирует веб-драйвер, унаследованный от класса WayPage.
+     * Инициализирует веб-драйвер, унаследованный от класса BasePage.
      *
      * @param driver объект WebDriver для управления браузером.
      */
-    public WayPageFuter(WebDriver driver) {
+    public WayPageFooter(WebDriver driver) {
         super(driver);
     }
+
     /**
      * Получает адрес из футера.
      * Включает ожидание видимости элемента адреса перед его извлечением.
      *
      * @return текст адреса из футера.
      */
-    @Step("Get footer address")
-    public String getFuterAdress() {
-        wait.until(ExpectedConditions.visibilityOf(futerAdress));
-        return futerAdress.getText();
+    public String getFooterAdress() {
+        return waitAndGetText(footerAdress);
     }
+
     /**
      * Получает первый номер телефона из футера.
      * Включает ожидание видимости элемента номера телефона перед его извлечением.
      *
      * @return текст первого номера телефона из футера.
      */
-    @Step("Get first phone number from footer")
-    public String getFuterPhoneNumber1() {
-        wait.until(ExpectedConditions.visibilityOf(futerPhoneNumber1));
-        return futerPhoneNumber1.getText();
+    public String getFooterPhoneNumber1() {
+        return waitAndGetText(footerPhoneNumber1);
     }
+
     /**
      * Получает второй номер телефона из футера.
      * Включает ожидание видимости элемента номера телефона перед его извлечением.
      *
      * @return текст второго номера телефона из футера.
      */
-    @Step("Get second phone number from footer")
-    public String getFuterPhoneNumber2() {
-        wait.until(ExpectedConditions.visibilityOf(futerPhoneNumber2));
-        return futerPhoneNumber2.getText();
+    public String getFooterPhoneNumber2() {
+        return waitAndGetText(footerPhoneNumber2);
     }
+
     /**
      * Получает первый адрес электронной почты из футера.
      * Включает ожидание видимости элемента адреса электронной почты перед его извлечением.
      *
      * @return текст первого адреса электронной почты из футера.
      */
-    @Step("Get first email address from footer")
-    public String getFuterMail1() {
-        wait.until(ExpectedConditions.visibilityOf(futerMail1));
-        return futerMail1.getText();
+    public String getFooterMail1() {
+        return waitAndGetText(footerMail1);
     }
+
     /**
      * Получает второй адрес электронной почты из футера.
      * Включает ожидание видимости элемента адреса электронной почты перед его извлечением.
      *
      * @return текст второго адреса электронной почты из футера.
      */
-    @Step("Get second email address from footer")
-    public String getFuterMail2() {
-        wait.until(ExpectedConditions.visibilityOf(futerMail2));
-        return futerMail2.getText();
+    public String getFooterMail2() {
+        return waitAndGetText(footerMail2);
     }
 }
