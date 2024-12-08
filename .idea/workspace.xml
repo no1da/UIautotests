@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="U5Cookies" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,12 +39,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.AlertPageTest.executor": "Run",
     "JUnit.AlertPageTest.testAlert.executor": "Run",
+    "JUnit.FailTest.executor": "Run",
+    "JUnit.FailTest.goToLifeTimeTest.executor": "Run",
+    "JUnit.HttpWatchTest.testDragAndDrop.executor": "Run",
     "JUnit.PageTest.coursesRightLeftTest.executor": "Run",
     "JUnit.PageTest.coursesScrollLeftTest.executor": "Run",
+    "JUnit.PageTest.wayPageFuterTest.executor": "Run",
+    "JUnit.PageTest.wayPageHeaderTest.executor": "Run",
+    "JUnit.PageTest.wayPageTest.executor": "Run",
+    "Maven.UIautotests [clean].executor": "Run",
+    "Maven.UIautotests [deploy].executor": "Run",
+    "Maven.UIautotests [install].executor": "Run",
+    "Maven.UIautotests [io.qameta.allure:allure-maven:2.12.0:serve].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "U4Screenshots",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Шпак/Downloads/UIautotests-master/UIautotests-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,12 +66,33 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.PageTest.coursesScrollLeftTest">
-    <configuration name="AlertPageTest.testAlert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FailTest.goToLifeTimeTest">
+    <configuration name="FailTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AlertPageTest" />
-      <option name="METHOD_NAME" value="testAlert" />
+      <option name="MAIN_CLASS_NAME" value="tests.FailTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FailTest.goToLifeTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FailTest" />
+      <option name="METHOD_NAME" value="goToLifeTimeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -69,7 +102,7 @@
       <module name="UIautotests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,7 +118,7 @@
       <module name="UIautotests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,13 +130,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PageTest.wayPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="wayPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FailTest.goToLifeTimeTest" />
+        <item itemvalue="JUnit.FailTest" />
+        <item itemvalue="JUnit.PageTest.wayPageTest" />
         <item itemvalue="JUnit.PageTest.coursesScrollLeftTest" />
         <item itemvalue="JUnit.PageTest.coursesRightLeftTest" />
-        <item itemvalue="JUnit.AlertPageTest.testAlert" />
-        <item itemvalue="JUnit.AlertPageTest.testAlert" />
-        <item itemvalue="JUnit.AlertPageTest.testAlert" />
       </list>
     </recent_temporary>
   </component>
@@ -125,6 +174,7 @@
       <updated>1732350159063</updated>
       <workItem from="1732350160006" duration="3000" />
       <workItem from="1732630578489" duration="2705000" />
+      <workItem from="1733653948906" duration="3063000" />
     </task>
     <servers />
   </component>
