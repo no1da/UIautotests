@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.FramesAndWindowsPages;
+import utils.TabsHelper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +26,7 @@ public class FrameAndWindowsTest {
 
     /**
      * Настройка браузера перед выполнением каждого теста (@BeforeEach).
-     * Инициализирует драйвер ChromeDriver, подключает объект FramesAndWindowsPages
+     * Инициализирует драйвер ChromeDriver, подключает объект pages.FramesAndWindowsPages
      * и переходит на начальную веб-страницу.
      *
      * @see FramesAndWindowsPages

@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HttpWatchPage;
+
 /**
  * Класс HttpWatchTest тестирует взаимодействие с Basic Authentication на сайте HttpWatch
  * с использованием Selenium WebDriver и выполняет проверки элементов на странице.

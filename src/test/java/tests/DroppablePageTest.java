@@ -1,9 +1,13 @@
+package tests;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.DroppablePage;
+
 /**
  * Тестовый класс для проверки функциональности Drag&Drop на странице, реализованной через Page Object Model (POM).
  * Использует JUnit 5 для написания тестов.
@@ -16,7 +20,7 @@ public class DroppablePageTest {
      * Метод, выполняющий предварительные настройки перед каждым тестом.
      * Включает:
      * - Инициализацию WebDriver (в данном случае используем ChromeDriver).
-     * - Создание экземпляра DroppablePage.
+     * - Создание экземпляра pages.DroppablePage.
      * - Открытие веб-страницы.
      * - Увеличение окна браузера на весь экран.
      */

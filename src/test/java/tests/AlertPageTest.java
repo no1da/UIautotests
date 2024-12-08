@@ -1,9 +1,12 @@
+package tests;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.AlertPage;
 
 import java.util.concurrent.TimeUnit;
 /**
@@ -19,7 +22,7 @@ public class AlertPageTest {
      * Инициализация браузера перед каждым тестом.
      * Этот метод:
      * - Создаёт экземпляр ChromeDriver,
-     * - Инициализирует экземпляр AlertPage,
+     * - Инициализирует экземпляр pages.AlertPage,
      * - Настраивает ожидания и максимизирует окно браузера,
      * - Загружает тестируемую веб-страницу.
      */

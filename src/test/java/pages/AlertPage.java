@@ -1,3 +1,5 @@
+package pages;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +23,7 @@ public class AlertPage {
     private WebElement messageBox;
 
     /**
-     * Конструктор страницы AlertPage.
+     * Конструктор страницы pages.AlertPage.
      * Инициализирует элементы страницы с использованием PageFactory.
      *
      * @param driver веб-драйвер, используемый для взаимодействия с браузером.

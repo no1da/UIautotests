@@ -1,3 +1,5 @@
+package pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 /**
- * Класс HttpWatchPage реализует Page Object Model (POM) для взаимодействия с веб-страницей HttpWatch.
+ * Класс pages.HttpWatchPage реализует Page Object Model (POM) для взаимодействия с веб-страницей HttpWatch.
  *
  * Этот класс инкапсулирует логику работы с элементами страницы:
  * кнопкой отображения изображения и самим изображением.
@@ -24,7 +26,7 @@ public class HttpWatchPage {
     @FindBy(xpath = "//*[@id=\"downloadImg\"]")
     private WebElement image;
     /**
-     * Конструктор класса HttpWatchPage.
+     * Конструктор класса pages.HttpWatchPage.
      *
      * Выполняет инициализацию элементов страницы с использованием PageFactory
      * и задаёт настройки для явного ожидания.

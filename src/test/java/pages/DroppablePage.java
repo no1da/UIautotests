@@ -1,10 +1,12 @@
+package pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 /**
- * Класс DroppablePage представляет страницу, где выполняются действия с элементами
+ * Класс pages.DroppablePage представляет страницу, где выполняются действия с элементами
  * drag-and-drop в рамках iframe. Реализован с использованием Page Object Model (POM).
  */
 public class DroppablePage {

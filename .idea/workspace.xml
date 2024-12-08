@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LifeTimePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LifeTimePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageCourses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageFooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageFooter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WayPageNavigationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WayPageNavigationBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AlertPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AlertPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DroppablePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DroppablePageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TabsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/TabsHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +58,8 @@
   <component name="RunManager">
     <configuration name="AlertPageTest.testAlert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UIautotests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AlertPageTest" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AlertPageTest" />
       <option name="METHOD_NAME" value="testAlert" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">

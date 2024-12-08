@@ -1,3 +1,5 @@
+package pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 /**
- * Класс FramesAndWindowsPages реализует логику взаимодействия с веб-страницей "Frames and Windows".
+ * Класс pages.FramesAndWindowsPages реализует логику взаимодействия с веб-страницей "Frames and Windows".
  */
 public class FramesAndWindowsPages {
     private WebDriver driver;
@@ -16,7 +18,7 @@ public class FramesAndWindowsPages {
     private WebElement blank;
     private WebDriverWait wait;
     /**
-     * Конструктор класса FramesAndWindowsPages.
+     * Конструктор класса pages.FramesAndWindowsPages.
      * Инициализирует элементы страницы с помощью PageFactory и задаёт объект WebDriverWait.
      *
      * @param driver У экземпляра WebDriver должно быть активное окно браузера.
@@ -29,7 +31,7 @@ public class FramesAndWindowsPages {
     /**
      * Метод, переключающий фокус WebDriver на iframe.
      *
-     * @return текущий экземпляр FramesAndWindowsPages для поддержки Fluent Interface.
+     * @return текущий экземпляр pages.FramesAndWindowsPages для поддержки Fluent Interface.
      */
     public FramesAndWindowsPages switchToFrame() {
         driver.switchTo().frame(frameElement);
@@ -39,7 +41,7 @@ public class FramesAndWindowsPages {
     /**
      * Метод для нажатия на ссылку, которая открывает новую вкладку/окно браузера.
      *
-     * @return текущий экземпляр FramesAndWindowsPages для поддержки Fluent Interface.
+     * @return текущий экземпляр pages.FramesAndWindowsPages для поддержки Fluent Interface.
      */
     public FramesAndWindowsPages blankClickWithoutFrame() {
         blank.click();
@@ -49,7 +51,7 @@ public class FramesAndWindowsPages {
     /**
      * Метод для нажатия на ссылку в iframe.
      *
-     * @return текущий экземпляр FramesAndWindowsPages для поддержки Fluent Interface.
+     * @return текущий экземпляр pages.FramesAndWindowsPages для поддержки Fluent Interface.
      */
     public FramesAndWindowsPages blankClick() {
         switchToFrame();
