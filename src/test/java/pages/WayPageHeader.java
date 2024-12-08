@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,6 +47,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст первого номера телефона.
      */
+    @Step("Get the first phone number from header")
     public String getPhoneNumber1() {
         return waitAndGetHref(headerPhoneNumber1);
     }
@@ -56,6 +58,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст второго номера телефона.
      */
+    @Step("Get the second phone number from header")
     public String getPhoneNumber2() {
         return waitAndGetHref(headerPhoneNumber2);
     }
@@ -66,6 +69,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст третьего номера телефона.
      */
+    @Step("Get the third phone number from header")
     public String getPhoneNumber3() {
         return waitAndGetHref(headerPhoneNumber3);
     }
@@ -76,6 +80,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст ссылки на Skype.
      */
+    @Step("Get the Skype link text from header")
     public String getSkype() {
         return waitAndGetHref(headerSkype);
     }
@@ -86,6 +91,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return текст адреса электронной почты.
      */
+    @Step("Get the email address text from header")
     public String getMail() {
         return waitAndGetHref(headerMail);
     }
@@ -96,6 +102,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на Facebook.
      */
+    @Step("Get the Facebook URL from header")
     public String getFaceBook() {
         return waitAndGetHref(faceBook);
     }
@@ -106,6 +113,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на LinkedIn.
      */
+    @Step("Get the LinkedIn URL from header")
     public String getLinkedIn() {
         return waitAndGetHref(linkedIn);
     }
@@ -116,6 +124,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на Google.
      */
+    @Step("Get the Google URL from header")
     public String getGoogle() {
         return waitAndGetHref(google);
     }
@@ -126,6 +135,7 @@ public class WayPageHeader extends WayPage {
      *
      * @return URL ссылки на YouTube.
      */
+    @Step("Get the YouTube URL from header")
     public String getYouTube() {
         return waitAndGetHref(youTube);
     }
