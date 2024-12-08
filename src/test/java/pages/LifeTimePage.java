@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +29,7 @@ public class LifeTimePage extends BasePage {
      *
      * @return текст заголовка страницы.
      */
+    @Step("Get the text from header")
     public String getTextHeader() {
         return waitAndGetText(header);
     }

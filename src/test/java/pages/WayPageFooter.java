@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,6 +39,7 @@ public class WayPageFooter extends WayPage {
      *
      * @return текст адреса из футера.
      */
+    @Step("Get footer address")
     public String getFooterAdress() {
         return waitAndGetText(footerAdress);
     }
@@ -48,6 +50,7 @@ public class WayPageFooter extends WayPage {
      *
      * @return текст первого номера телефона из футера.
      */
+    @Step("Get first phone number from footer")
     public String getFooterPhoneNumber1() {
         return waitAndGetText(footerPhoneNumber1);
     }
@@ -58,6 +61,7 @@ public class WayPageFooter extends WayPage {
      *
      * @return текст второго номера телефона из футера.
      */
+    @Step("Get second phone number from footer")
     public String getFooterPhoneNumber2() {
         return waitAndGetText(footerPhoneNumber2);
     }
@@ -68,6 +72,7 @@ public class WayPageFooter extends WayPage {
      *
      * @return текст первого адреса электронной почты из футера.
      */
+    @Step("Get first email address from footer")
     public String getFooterMail1() {
         return waitAndGetText(footerMail1);
     }
@@ -78,6 +83,7 @@ public class WayPageFooter extends WayPage {
      *
      * @return текст второго адреса электронной почты из футера.
      */
+    @Step("Get second email address from footer")
     public String getFooterMail2() {
         return waitAndGetText(footerMail2);
     }

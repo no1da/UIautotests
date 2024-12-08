@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -40,6 +41,7 @@ public class WayPageCourses extends BasePage {
      *
      * @return атрибут "data-swiper-slide-index" активного курса.
      */
+    @Step("Get title of the active course")
     public String getTitleActiveCourse() {
         waiter.waitForVisibility(menuCourses);
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -53,6 +55,7 @@ public class WayPageCourses extends BasePage {
      * Прокручивает карусель курсов влево.
      * Ожидает, что кнопка прокрутки влево станет кликабельной и затем кликает по ней.
      */
+    @Step("Scroll courses carousel to the left")
     public WayPageCourses scrollCoursesLeft() {
         return (WayPageCourses) waitAndClick(leftScrollButton);
     }
@@ -61,6 +64,7 @@ public class WayPageCourses extends BasePage {
      * Прокручивает карусель курсов вправо.
      * Ожидает, что кнопка прокрутки вправо станет видимой и затем кликает по ней.
      */
+    @Step("Scroll courses carousel to the right")
     public WayPageCourses scrollCoursesRight() {
         return (WayPageCourses) waitAndClick(rightScrollButton);
     }

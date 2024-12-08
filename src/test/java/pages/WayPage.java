@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +36,7 @@ public class WayPage extends BasePage {
      *
      * @return true, если заголовок видимый; иначе false.
      */
+    @Step("Check visibility of the header")
     public boolean findHeader() {
         return waitAndIsDisplayed(header);
     }
@@ -44,6 +46,7 @@ public class WayPage extends BasePage {
      *
      * @return true, если навигационный блок видимый; иначе false.
      */
+    @Step("Check visibility of the navigation block")
     public boolean findNavigationBlock() {
         return waitAndIsDisplayed(navigationBlock);
     }
@@ -53,6 +56,7 @@ public class WayPage extends BasePage {
      *
      * @return true, если кнопка регистрации видимая; иначе false.
      */
+    @Step("Check visibility of the registration button")
     public boolean findButtonRegistration() {
         return waitAndIsDisplayed(buttonRegistration);
     }
@@ -62,6 +66,7 @@ public class WayPage extends BasePage {
      *
      * @return true, если список курсов видимый; иначе false.
      */
+    @Step("Check visibility of the courses list")
     public boolean findListCourses() {
         return waitAndIsDisplayed(listCourses);
     }
@@ -71,6 +76,7 @@ public class WayPage extends BasePage {
      *
      * @return true, если футер видимый; иначе false.
      */
+    @Step("Check visibility of the footer")
     public boolean findFooter() {
         return waitAndIsDisplayed(footer);
     }
