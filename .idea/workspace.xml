@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FrameAndWindowsTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="U12Alerts" />
+        <entry key="$PROJECT_DIR$" value="U11Tabs" />
       </map>
     </option>
   </component>
@@ -36,74 +33,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.FrameAndWindowsTest.testMultipleTabs.executor": "Run",
-    "JUnit.FramesAndWindowsPages.testMultipleTabs.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TestNG.FrameAndWindowsTest.executor": "Run",
-    "git-widget-placeholder": "U11Tabs",
-    "kotlin-language-version-configured": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Шпак/Desktop/SimbirSoft/UIautotests/UIautotests/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.HttpWatchTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;U13BasicAuth&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Шпак/Desktop/SimbirSoft/UIautotests/UIautotests/src/main/java/org/example/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.FrameAndWindowsTest">
-    <configuration name="FrameAndWindowsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UIautotests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FrameAndWindowsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FrameAndWindowsTest.testMultipleTabs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UIautotests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FrameAndWindowsTest" />
-      <option name="METHOD_NAME" value="testMultipleTabs" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FramesAndWindowsPages.testMultipleTabs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UIautotests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FramesAndWindowsPages" />
-      <option name="METHOD_NAME" value="testMultipleTabs" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FrameAndWindowsTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UIautotests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FrameAndWindowsTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.FrameAndWindowsTest" />
-        <item itemvalue="TestNG.FrameAndWindowsTest" />
-        <item itemvalue="JUnit.FramesAndWindowsPages.testMultipleTabs" />
-        <item itemvalue="JUnit.FrameAndWindowsTest.testMultipleTabs" />
-        <item itemvalue="JUnit.FrameAndWindowsTest.testMultipleTabs" />
-      </list>
-    </recent_temporary>
-  </component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -126,6 +67,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
