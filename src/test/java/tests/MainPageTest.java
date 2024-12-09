@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.WayPage;
 import utils.Config;
+import utils.ResultWatcher;
 
 /**
  * Основной класс для тестирования главной страницы (https://www.way2automation.com/).
@@ -19,8 +20,13 @@ import utils.Config;
 @Epic("Testing Way2Automation Page")
 public class MainPageTest {
     protected static Config config;
+    protected static WebDriver driver;
+    protected static ResultWatcher resultWatcher;
     protected WayPage wayPage;
-    protected WebDriver driver;
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
 
     /**
      * Инициализирует конфигурационные данные.
@@ -28,6 +34,7 @@ public class MainPageTest {
      */
     @BeforeAll
     public static void setUpBeforeClass() throws Exception {
+        resultWatcher = new ResultWatcher();
         config = new Config();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)

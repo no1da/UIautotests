@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="594a017c-17fe-445e-93e0-2e9058c6577e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/utils/AllureAttachmentsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/utils/MyExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/FailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FailTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MainPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/ResultWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/ResultWatcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +52,7 @@
     "JUnit.HttpWatchTest.testDragAndDrop.executor": "Run",
     "JUnit.PageTest.coursesRightLeftTest.executor": "Run",
     "JUnit.PageTest.coursesScrollLeftTest.executor": "Run",
+    "JUnit.PageTest.goToLifeTimeTest.executor": "Run",
     "JUnit.PageTest.wayPageFuterTest.executor": "Run",
     "JUnit.PageTest.wayPageHeaderTest.executor": "Run",
     "JUnit.PageTest.wayPageTest.executor": "Run",
@@ -98,22 +105,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PageTest.coursesRightLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UIautotests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
-      <option name="METHOD_NAME" value="coursesRightLeftTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PageTest.coursesScrollLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UIautotests" />
       <extension name="coverage">
@@ -125,6 +116,22 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
       <option name="METHOD_NAME" value="coursesScrollLeftTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageTest.goToLifeTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UIautotests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PageTest" />
+      <option name="METHOD_NAME" value="goToLifeTimeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FailTest.goToLifeTimeTest" />
+        <item itemvalue="JUnit.PageTest.goToLifeTimeTest" />
         <item itemvalue="JUnit.FailTest" />
         <item itemvalue="JUnit.PageTest.wayPageTest" />
         <item itemvalue="JUnit.PageTest.coursesScrollLeftTest" />
-        <item itemvalue="JUnit.PageTest.coursesRightLeftTest" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +181,7 @@
       <updated>1732350159063</updated>
       <workItem from="1732350160006" duration="3000" />
       <workItem from="1732630578489" duration="2705000" />
-      <workItem from="1733653948906" duration="3063000" />
+      <workItem from="1733653948906" duration="8078000" />
     </task>
     <servers />
   </component>

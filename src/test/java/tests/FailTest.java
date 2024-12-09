@@ -5,14 +5,22 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.LifeTimePage;
 import pages.WayPageNavigationBlock;
+import utils.MyExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * Класс тестирования страницы (https://www.way2automation.com/) содержит тест
+ * для проверки функционала создания скриншотов невыполненных тестов.
+ * и функциональности веб-страницы, используя фреймворк JUnit.
+ */
+@ExtendWith(MyExtension.class)
 public class FailTest extends MainPageTest {
     private LifeTimePage lifeTimePage;
     private WayPageNavigationBlock wayPageNavigationBlock;
+
     /**
      * Тестирует переход на страницу 'LIFETIME MEMBERSHIP CLUB' и сверяет
      * заголовок страницы с ожидаемым заголовком из конфигурации.
