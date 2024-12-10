@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * и функциональности веб-страницы, используя фреймворк JUnit.
  */
 @ExtendWith(MyExtension.class)
-public class FailTest extends MainPageTest {
+public class FailTest extends BaseTest {
     private LifeTimePage lifeTimePage;
     private WayPageNavigationBlock wayPageNavigationBlock;
 

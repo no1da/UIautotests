@@ -3,7 +3,8 @@ package utils;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import tests.MainPageTest;
+import org.openqa.selenium.WebDriver;
+import tests.BaseTest;
 
 import java.io.IOException;
 /**
@@ -22,7 +23,7 @@ public class AllureAttachmentsManager {
      * @throws IOException если не удается выполнить захват скриншота.
      */
     @Attachment(value = "Снимок экрана", type = "image/png")
-    public static byte[] screenshot() throws IOException {
-        return ((TakesScreenshot) MainPageTest.getDriver()).getScreenshotAs(OutputType.BYTES);
+    public static byte[] screenshot(WebDriver driver) throws IOException {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

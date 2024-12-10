@@ -18,11 +18,11 @@ import utils.ResultWatcher;
  * использующих Selenium WebDriver и страницу WayPage.
  */
 @Epic("Testing Way2Automation Page")
-public class MainPageTest {
-    protected static Config config;
-    protected static WebDriver driver;
-    protected static ResultWatcher resultWatcher;
-    protected WayPage wayPage;
+public class BaseTest {
+    static Config config;
+    static WebDriver driver;
+    static ResultWatcher resultWatcher;
+    WayPage wayPage;
 
     public static WebDriver getDriver() {
         return driver;

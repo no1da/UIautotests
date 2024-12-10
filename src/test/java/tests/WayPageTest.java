@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  * и функциональности веб-страницы, используя фреймворк JUnit.
  */
 @Epic("Testing Way2Automation Page")
-public class PageTest extends MainPageTest {
+public class WayPageTest extends BaseTest {
     private WayPageHeader wayPageHeader;
     private WayPageFooter wayPageFooter;
     private LifeTimePage lifeTimePage;
@@ -56,7 +56,7 @@ public class PageTest extends MainPageTest {
      * ожидаемыми значениями из конфигурации.
      */
     @Test
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     @Feature("Header Information")
     @Story("Validate header information against expected values")
     public void wayPageHeaderTest() {
