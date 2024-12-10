@@ -4,12 +4,12 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import tests.BaseTest;
 
 import java.io.IOException;
+
 /**
  * Класс для управления вложениями Allure, связанными с тестами.
- *
+ * 
  * Этот класс предоставляет статический метод для захвата и прикрепления
  * скриншотов экрана в отчеты Allure. Скриншоты могут быть полезны для
  * анализа состояния приложения на момент сбоя теста.
