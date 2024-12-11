@@ -1,6 +1,8 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Epic;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.WayPage;
 import utils.Config;
+import utils.ResultWatcher;
 
 /**
  * Основной класс для тестирования главной страницы (https://www.way2automation.com/).
@@ -15,10 +18,15 @@ import utils.Config;
  * использующих Selenium WebDriver и страницу WayPage.
  */
 @Epic("Testing Way2Automation Page")
-public class MainPageTest {
-    protected static Config config;
-    protected WayPage wayPage;
-    protected WebDriver driver;
+public class BaseTest {
+    static Config config;
+    static WebDriver driver;
+    static ResultWatcher resultWatcher;
+    WayPage wayPage;
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
 
     /**
      * Инициализирует конфигурационные данные.
@@ -26,7 +34,11 @@ public class MainPageTest {
      */
     @BeforeAll
     public static void setUpBeforeClass() throws Exception {
+        resultWatcher = new ResultWatcher();
         config = new Config();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(true)
+        );
     }
 
     /**
@@ -48,6 +60,8 @@ public class MainPageTest {
      */
     @AfterEach
     public void tearDown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

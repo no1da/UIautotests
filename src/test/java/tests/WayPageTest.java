@@ -2,7 +2,6 @@ package tests;
 
 import io.qameta.allure.*;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
@@ -14,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  * и функциональности веб-страницы, используя фреймворк JUnit.
  */
 @Epic("Testing Way2Automation Page")
-public class PageTest extends MainPageTest {
+public class WayPageTest extends BaseTest {
     private WayPageHeader wayPageHeader;
-    private WayPageFooter wayPageFuter;
+    private WayPageFooter wayPageFooter;
     private LifeTimePage lifeTimePage;
     private WayPageNavigationBlock wayPageNavigationBlock;
     private WayPageCourses wayPageCourses;
@@ -57,7 +56,7 @@ public class PageTest extends MainPageTest {
      * ожидаемыми значениями из конфигурации.
      */
     @Test
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     @Feature("Header Information")
     @Story("Validate header information against expected values")
     public void wayPageHeaderTest() {
@@ -104,22 +103,22 @@ public class PageTest extends MainPageTest {
     @Feature("Footer Information")
     @Story("Validate footer information against expected values")
     public void wayPageFuterTest() {
-        wayPageFuter = new WayPageFooter(driver);
+        wayPageFooter = new WayPageFooter(driver);
         SoftAssertions softAssertions = new SoftAssertions();
 
-        softAssertions.assertThat(wayPageFuter.getFooterAdress())
+        softAssertions.assertThat(wayPageFooter.getFooterAdress())
                 .as("Footer address should match")
                 .isEqualTo(config.getProperty("adress"));
-        softAssertions.assertThat(wayPageFuter.getFooterPhoneNumber1())
+        softAssertions.assertThat(wayPageFooter.getFooterPhoneNumber1())
                 .as("Footer phone number 1 should match")
                 .isEqualTo(config.getProperty("phoneNumber1"));
-        softAssertions.assertThat(wayPageFuter.getFooterPhoneNumber2())
+        softAssertions.assertThat(wayPageFooter.getFooterPhoneNumber2())
                 .as("Footer phone number 2 should match")
                 .isEqualTo(config.getProperty("phoneNumber2"));
-        softAssertions.assertThat(wayPageFuter.getFooterMail1())
+        softAssertions.assertThat(wayPageFooter.getFooterMail1())
                 .as("Footer email 1 should match")
                 .isEqualTo(config.getProperty("mail1"));
-        softAssertions.assertThat(wayPageFuter.getFooterMail2())
+        softAssertions.assertThat(wayPageFooter.getFooterMail2())
                 .as("Footer email 2 should match")
                 .isEqualTo(config.getProperty("mail2"));
 
