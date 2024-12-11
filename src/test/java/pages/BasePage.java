@@ -76,6 +76,19 @@ public class BasePage {
     }
 
     /**
+     * Ожидает, пока элемент станет видимым и кликабельным, после чего вводит текст в поле данного элемента.
+     *
+     * @param element элемент, в поле которого нужно ввести текст.
+     * @param text    текст, который будет вставлен в элемент.
+     * @return текущий экземпляр BasePage для возможности цепочного вызова методов.
+     */
+    public BasePage waitAndInput(WebElement element, String text) {
+        waiter.waitForVisibility(element);
+        element.sendKeys(text);
+        return this;
+    }
+
+    /**
      * Ожидает кликабельность элемента и выполняет клик по нему.
      *
      * @param element элемент, по которому нужно кликнуть.
