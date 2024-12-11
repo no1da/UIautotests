@@ -1,3 +1,5 @@
+package tests;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Тестовый класс FrameAndWindowsTest выполняет автоматизированное тестирование функциональности
+ * Тестовый класс tests.FrameAndWindowsTest выполняет автоматизированное тестирование функциональности
  * открытия ссылок в новых вкладках (tabs) на веб-странице в соответствии с механизмом Selenium WebDriver.
  */
 public class FrameAndWindowsTest {
