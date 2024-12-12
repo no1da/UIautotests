@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,7 +21,6 @@ public class BasePage {
     /**
      * Конструктор класса BasePage.
      * Инициализирует WebDriver, WebDriverWait и элементы страницы.
-     *
      * @param driver объект WebDriver для управления браузером.
      */
     public BasePage(WebDriver driver) {
@@ -31,7 +31,6 @@ public class BasePage {
 
     /**
      * Ожидает видимость элемента и возвращает его текст.
-     *
      * @param element элемент, текст которого нужно получить.
      * @return текст элемента.
      */
@@ -42,7 +41,6 @@ public class BasePage {
 
     /**
      * Ожидает видимость элемента и возвращает значение его атрибута "href".
-     *
      * @param element элемент, значение атрибута которого нужно получить.
      * @return значение атрибута "href" элемента.
      */
@@ -53,7 +51,6 @@ public class BasePage {
 
     /**
      * Ожидает видимость элемента и проверяет, отображается ли он.
-     *
      * @param element элемент, который нужно проверить.
      * @return true, если элемент отображается, иначе false.
      */
@@ -64,7 +61,6 @@ public class BasePage {
 
     /**
      * Ожидает кликабельность элемента и перемещает курсор мыши к нему.
-     *
      * @param element элемент, к которому нужно переместить курсор.
      * @return текущий экземпляр BasePage для цепочки вызовов.
      */
@@ -77,7 +73,6 @@ public class BasePage {
 
     /**
      * Ожидает, пока элемент станет видимым и кликабельным, после чего вводит текст в поле данного элемента.
-     *
      * @param element элемент, в поле которого нужно ввести текст.
      * @param text    текст, который будет вставлен в элемент.
      * @return текущий экземпляр BasePage для возможности цепочного вызова методов.
@@ -90,7 +85,6 @@ public class BasePage {
 
     /**
      * Ожидает кликабельность элемента и выполняет клик по нему.
-     *
      * @param element элемент, по которому нужно кликнуть.
      * @return текущий экземпляр BasePage для цепочки вызовов.
      */
@@ -99,6 +93,37 @@ public class BasePage {
         Actions action = new Actions(driver);
         action.moveToElement(element).click().perform();
         return this;
+    }
+
+    /**
+     * Удалить фокус с указанного поля ввода.
+     * @param element элемент, с которого нужно убрать фокус.
+     */
+    public void removeFocus(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].blur();", element);
+    }
+
+    /**
+     * Проверяет, был ли фокус удален с указанного элемента.
+     * @param element элемент, для которого проверяется статус фокуса.
+     * @return true, если фокус убран, иначе false.
+     * Это достигается путем проверки, является ли элемент активным.
+     */
+    public boolean isFocusRemoved(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String script = "return document.activeElement !== arguments[0];";
+        return (Boolean) js.executeScript(script, element);
+    }
+
+    /**
+     * Проверяет наличие вертикального скролла на странице.
+     * @return true, если скролл присутствует, иначе false.
+     * Это определяется на основе высоты содержимого страницы и высоты окна браузера.
+     */
+    public boolean hasVerticalScroll() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (Boolean) js.executeScript("return document.body.scrollHeight > window.innerHeight;");
     }
 
 }
