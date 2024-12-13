@@ -4,18 +4,12 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 /**
  * Класс страницы авторизации для https://www.sql-ex.ru/.
  * Обеспечивает взаимодействие с элементами страницы авторизации.
  */
-public class AuthSQLPage {
-    private WebDriver driver;
-    private WebDriverWait waiter;
+public class AuthSQLPage extends BasePage {
     @FindBy(xpath = "//form[@name='frmlogin']//input[@type='text' and @name='login']")
     private WebElement inputLogin;
     @FindBy(xpath = "//form[@name='frmlogin']//input[@type='password' and @name='psw']")
@@ -31,9 +25,7 @@ public class AuthSQLPage {
      * @param driver WebDriver для управления браузером.
      */
     public AuthSQLPage(WebDriver driver) {
-        this.driver = driver;
-        this.waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     /**
@@ -44,7 +36,7 @@ public class AuthSQLPage {
      */
     @Step("Fill in the login field with login: {login}")
     public AuthSQLPage enterLogin(String login) {
-        inputLogin.sendKeys(login);
+        waitAndInput(inputLogin, login);
         return this;
     }
 
@@ -56,7 +48,7 @@ public class AuthSQLPage {
      */
     @Step("Fill in the password field")
     public AuthSQLPage enterPassword(String password) {
-        inputPassword.sendKeys(password);
+        waitAndInput(inputPassword, password);
         return this;
     }
 
@@ -67,7 +59,7 @@ public class AuthSQLPage {
      */
     @Step("Submit the login form")
     public AuthSQLPage submit() {
-        inputSubmit.click();
+        waitAndClick(inputSubmit);
         return this;
     }
 
@@ -78,6 +70,10 @@ public class AuthSQLPage {
      */
     @Step("Check visibility of the username")
     public boolean findUsername() {
-        return username.isDisplayed();
+        return waitAndIsDisplayed(username);
+    }
+
+    public WebElement getInputLogin() {
+        return inputLogin;
     }
 }
