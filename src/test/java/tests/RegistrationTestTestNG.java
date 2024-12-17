@@ -1,12 +1,30 @@
 package tests;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.PPWRegistrationPage;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
 
 
-public class RegistrationTest extends BaseTestTestNG {
+public class RegistrationTestTestNG extends BaseTestTestNG {
+    /**
+     * Метод инициализации, выполняемый перед каждым тестом.
+     * Создает новый экземпляр WebDriver, открывает браузер,
+     * настраивает его и переходит на целевой URL, определенный в конфигурации.
+     */
+    @BeforeMethod
+    public void setUp() {
+        driver = new ChromeDriver();
+        ppwRegistrationPage = new PPWRegistrationPage(driver);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get(config.getProperty("registration_url"));
+    }
     /**
      * DataProvider для возвращения различных наборов данных для теста авторизации.
      *
