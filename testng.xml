@@ -1,0 +1,12 @@
+<suite name="Test-class Suite" parallel="tests" thread-count="2">
+    <test name="TestSuite1">
+        <classes>
+            <class name="tests.RegistrationTestTestNG"/>
+        </classes>
+    </test>
+    <test name="TestSuite2">
+        <classes>
+            <class name="tests.AuthTestTestNG"/>
+        </classes>
+    </test>
+</suite>
