@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junitpioneer.jupiter.RetryingTest;
 import pages.LifeTimePage;
 import pages.WayPageNavigationBlock;
+import utils.FailedTestListener;
 import utils.MyExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * для проверки функционала создания скриншотов невыполненных тестов
  * и функциональности веб-страницы, используя фреймворк JUnit.
  */
-@ExtendWith(MyExtension.class)
+@ExtendWith({MyExtension.class, FailedTestListener.class})
 public class FailTest extends BaseTest {
     private LifeTimePage lifeTimePage;
     private WayPageNavigationBlock wayPageNavigationBlock;
@@ -30,7 +31,7 @@ public class FailTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Feature("Lifetime Membership Navigation")
     @Story("Test navigation to lifetime membership page")
-    public void goToLifeTimeTest() {
+    public void testGoToLifeTime() {
         lifeTimePage = new LifeTimePage(driver);
         wayPageNavigationBlock = new WayPageNavigationBlock(driver);
         wayPageNavigationBlock.goToLifeTime();
