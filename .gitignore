@@ -39,3 +39,4 @@ build/
 .idea/workspace.xml
 selenium-chrome-driver-4.27.0.jar
 selenium-server-4.27.0.jar
+failed-tests.txt
