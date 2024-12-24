@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * и функциональности веб-страницы, используя фреймворк JUnit.
  */
 @ExtendWith({MyExtension.class, FailedTestListener.class})
-public class FailTest extends BaseTest {
+public class FailTest extends BaseTestDriverFactory {
     private LifeTimePage lifeTimePage;
     private WayPageNavigationBlock wayPageNavigationBlock;
     private static final int MAX_RETRY_COUNT = 2;
