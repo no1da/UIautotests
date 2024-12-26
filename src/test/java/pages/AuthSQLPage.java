@@ -34,7 +34,7 @@ public class AuthSQLPage extends BasePage {
      * @param login логин пользователя.
      * @return текущий экземпляр AuthSQLPage для цепочки методов.
      */
-    @Step("Fill in the login field with login: {login}")
+    @Step("Fill in the login field with login")
     public AuthSQLPage enterLogin(String login) {
         waitAndInput(inputLogin, login);
         return this;
